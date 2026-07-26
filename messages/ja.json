@@ -1,0 +1,51 @@
+{
+  "Common": {
+    "brand": "OMOTELL",
+    "changeLanguage": "言語を変更",
+    "menu": "メニュー",
+    "back": "戻る",
+    "viewAll": "すべて見る",
+    "learnMore": "詳しく見る",
+    "imageUnavailable": "画像を表示できません",
+    "loading": "読み込み中",
+    "noResults": "商品が見つかりませんでした",
+    "clearFilters": "条件をクリア"
+  },
+  "Language": {
+    "title": "言語を選択してください",
+    "subtitle": "Please select your language",
+    "continue": "この言語で見る"
+  },
+  "Store": {
+    "recommended": "今月のおすすめ",
+    "categories": "カテゴリーから探す",
+    "guideTitle": "はじめての方へ",
+    "guideBody": "だしの選び方と、基本の使い方をご案内します。",
+    "storeInfo": "店舗情報"
+  },
+  "Products": {
+    "title": "商品一覧",
+    "searchPlaceholder": "商品名・キーワードで検索",
+    "count": "{count}件の商品",
+    "compare": "比較する"
+  },
+  "Product": {
+    "recommendedFor": "こんな方におすすめ",
+    "features": "特徴",
+    "usage": "使い方",
+    "materials": "素材・製法",
+    "comparison": "比較",
+    "details": "詳細",
+    "usageTitle": "基本のだしの取り方",
+    "showShelf": "売場を確認",
+    "showStaff": "店員に見せる",
+    "share": "共有・保存",
+    "videoCaption": "字幕を表示できます"
+  },
+  "Nav": {
+    "home": "おすすめ",
+    "products": "商品",
+    "recipes": "レシピ",
+    "store": "店舗情報"
+  }
+}

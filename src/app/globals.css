@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sumi: #14140f;
+  --ink: #1b1917;
+  --ink-soft: #4a443b;
+  --muted: #6e675b;
+  --kinari: #f3efe7;
+  --washi: #faf8f3;
+  --rule: #dfd9cc;
+  --rule-strong: #c6beae;
+  --shu: #9a3b2c;
+  --shell-width: 390px;
+
+  --mincho: "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", "Yu Mincho",
+    游明朝体, YuMincho, "Noto Serif CJK JP", var(--font-noto-serif-jp),
+    "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--sumi);
+  color: var(--ink);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--sumi);
+}
+
+button,
+input,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.on-dark button:focus-visible,
+.on-dark a:focus-visible {
+  outline-color: #ffffff;
+}
+
+.mobile-shell {
+  width: 100%;
+  max-width: var(--shell-width);
+  min-height: 100svh;
+  margin: 0 auto;
+  overflow-x: clip;
+  background: var(--kinari);
+}
+
+.mobile-fixed {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 40;
+  width: 100%;
+  max-width: var(--shell-width);
+  margin-inline: auto;
+}
+
+/* 明朝 — 見出しは全ロケール、本文は ja / zh-* のみ */
+.mincho {
+  font-family: var(--mincho);
+  font-feature-settings: "palt" 1;
+}
+
+/* 縦組み — ja / zh-* のみ適用する */
+.tategaki {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-feature-settings: "vpal" 1, "vkrn" 1;
+  white-space: nowrap;
+}
+
+.tracking-jp {
+  letter-spacing: 0.14em;
+}
+
+.tracking-jp-tight {
+  letter-spacing: 0.06em;
+}
+
+.tracking-latin {
+  letter-spacing: 0.22em;
+}
+
+.rule-t {
+  border-top: 1px solid var(--rule);
+}
+
+.rule-b {
+  border-bottom: 1px solid var(--rule);
+}
+
+/* kayanoya.com のヘアライン円 — 丸みを許す唯一の箇所 */
+.hairline-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  border: 1px solid currentColor;
+  border-radius: 9999px;
+}
+
+/* 写真の上に敷く墨のグラデーション */
+/* 上端は白いヘッダー記号、下端は白い本文が載るので両端を濃くする */
+.veil-hero {
+  background: linear-gradient(
+    to bottom,
+    rgb(20 20 15 / 0.74) 0%,
+    rgb(20 20 15 / 0.46) 34%,
+    rgb(20 20 15 / 0.62) 70%,
+    rgb(20 20 15 / 0.88) 100%
+  );
+}
+
+/*
+ * 写真の上に載る文字。写真の明暗は素材によって変わるため、
+ * 覆いを濃くして写真を潰す代わりに、極薄い影で最低限の可読性を担保する。
+ */
+.text-on-photo {
+  text-shadow:
+    0 1px 4px rgb(20 20 15 / 0.8),
+    0 0 2px rgb(20 20 15 / 0.55);
+}
+
+/* 線画の記号には text-shadow が効かないので drop-shadow を使う */
+.glyph-on-photo {
+  filter: drop-shadow(0 1px 3px rgb(20 20 15 / 0.7));
+}
+
+/*
+ * 写真バンドは中央に白文字が載る。だしの写真のように明るい素材でも
+ * 4.5:1 を確保できるよう、中央を最も濃くする。
+ */
+.veil-band {
+  background: linear-gradient(
+    to bottom,
+    rgb(20 20 15 / 0.5) 0%,
+    rgb(20 20 15 / 0.7) 45%,
+    rgb(20 20 15 / 0.7) 62%,
+    rgb(20 20 15 / 0.6) 100%
+  );
+}
+
+/* 言語選択は写真の上に長い本文が載るため、下半分を強く沈める */
+.veil-full {
+  background: linear-gradient(
+    to bottom,
+    rgb(20 20 15 / 0.78) 0%,
+    rgb(20 20 15 / 0.66) 26%,
+    rgb(20 20 15 / 0.84) 50%,
+    rgb(20 20 15 / 0.93) 74%,
+    rgb(20 20 15 / 0.96) 100%
+  );
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.section-anchor {
+  scroll-margin-top: 112px;
+}
+
+@media (max-width: 430px) {
+  html,
+  body {
+    background: var(--kinari);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

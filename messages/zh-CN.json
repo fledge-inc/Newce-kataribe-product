@@ -1,0 +1,8 @@
+{
+  "Common": {"brand":"OMOTELL","changeLanguage":"切换语言","menu":"菜单","back":"返回","viewAll":"查看全部","learnMore":"了解更多","imageUnavailable":"无法显示图片","loading":"加载中","noResults":"未找到商品","clearFilters":"清除筛选"},
+  "Language": {"title":"请选择语言","subtitle":"选择您偏好的语言","continue":"继续"},
+  "Store": {"recommended":"本月推荐","categories":"按类别查找","guideTitle":"初次了解高汤","guideBody":"了解高汤的选择方法和日常使用方式。","storeInfo":"店铺信息"},
+  "Products": {"title":"商品一览","searchPlaceholder":"搜索商品名或关键词","count":"{count}件商品","compare":"比较"},
+  "Product": {"recommendedFor":"推荐给","features":"特点","usage":"用法","materials":"食材与工艺","comparison":"比较","details":"详情","usageTitle":"基本熬制方法","showShelf":"查看卖场","showStaff":"出示给店员","share":"分享与保存","videoCaption":"可显示字幕"},
+  "Nav": {"home":"推荐","products":"商品","recipes":"食谱","store":"店铺"}
+}

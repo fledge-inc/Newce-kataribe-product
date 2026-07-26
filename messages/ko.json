@@ -1,0 +1,8 @@
+{
+  "Common": {"brand":"OMOTELL","changeLanguage":"언어 변경","menu":"메뉴","back":"뒤로","viewAll":"모두 보기","learnMore":"자세히 보기","imageUnavailable":"이미지를 표시할 수 없습니다","loading":"불러오는 중","noResults":"상품을 찾지 못했습니다","clearFilters":"필터 지우기"},
+  "Language": {"title":"언어를 선택해 주세요","subtitle":"원하는 언어를 선택하세요","continue":"계속"},
+  "Store": {"recommended":"이달의 추천","categories":"카테고리로 찾기","guideTitle":"다시를 처음 접하시나요?","guideBody":"다시를 고르는 법과 일상 요리에서 쓰는 법을 안내합니다.","storeInfo":"매장 정보"},
+  "Products": {"title":"상품 목록","searchPlaceholder":"상품명 또는 키워드 검색","count":"상품 {count}개","compare":"비교"},
+  "Product": {"recommendedFor":"이런 분께 추천","features":"특징","usage":"사용법","materials":"재료와 제조법","comparison":"비교","details":"상세","usageTitle":"기본 다시 내는 법","showShelf":"매장 위치","showStaff":"직원에게 보여주기","share":"공유 및 저장","videoCaption":"자막을 표시할 수 있습니다"},
+  "Nav": {"home":"추천","products":"상품","recipes":"레시피","store":"매장"}
+}
