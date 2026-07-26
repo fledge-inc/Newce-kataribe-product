@@ -2,9 +2,10 @@ import {notFound} from "next/navigation";
 import {AppHeader} from "@/components/app-header";
 import {ProductDetailView} from "@/components/product-detail-view";
 import {getProductBySlug, products} from "@/data/content";
+import {getRecipesByIds} from "@/data/recipes";
 import {getLocalizedText} from "@/lib/localized";
 import {routing} from "@/i18n/routing";
-import {getTranslations, setRequestLocale} from "next-intl/server";
+import {setRequestLocale} from "next-intl/server";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -25,41 +26,21 @@ export default async function ProductDetailPage({
     notFound();
   }
 
-  const t = await getTranslations("Product");
-  const labels = {
-    recommendedFor: t("recommendedFor"),
-    features: t("features"),
-    usage: t("usage"),
-    materials: t("materials"),
-    comparison: t("comparison"),
-    details: t("details"),
-    usageTitle: t("usageTitle"),
-    showShelf: t("showShelf"),
-    showStaff: t("showStaff"),
-    share: t("share"),
-    videoCaption: t("videoCaption")
-  };
-
-  const hasHero = product.sections.length > 0;
+  const relatedRecipes = getRecipesByIds(product.recipeIds);
 
   return (
     <main className="min-h-svh bg-kinari">
-      {/* ヒーロー写真がある時だけヘッダーを写真に重ねる */}
+      {/* ヒーロー写真に重ねるので overlay */}
       <AppHeader
         title={getLocalizedText(product.name, locale)}
         back
-        overlay={hasHero}
+        overlay
       />
-      {hasHero ? (
-        <ProductDetailView product={product} locale={locale} labels={labels} />
-      ) : (
-        <div className="px-6 py-16 text-center">
-          <p className="text-[13px] leading-7 tracking-jp-tight text-muted">
-            {getLocalizedText(product.summary, locale)}
-          </p>
-        </div>
-      )}
+      <ProductDetailView
+        product={product}
+        locale={locale}
+        relatedRecipes={relatedRecipes}
+      />
     </main>
   );
 }
-

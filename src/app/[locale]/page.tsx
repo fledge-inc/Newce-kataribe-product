@@ -26,6 +26,7 @@ export default async function LanguagePage({
   const {locale} = await params;
   setRequestLocale(locale);
   const t = await getTranslations("Language");
+  const tCommon = await getTranslations("Common");
 
   return (
     <main className="on-dark relative min-h-svh overflow-hidden bg-sumi text-white">
@@ -33,17 +34,17 @@ export default async function LanguagePage({
         src="/images/store/kayanoya-interior.jpg"
         alt=""
         fill
-        sizes="(max-width: 430px) 100vw, 390px"
+        sizes="(max-width: 639px) 100vw, 420px"
         priority
         className="absolute inset-0"
         imageClassName="object-cover"
       />
       <div className="veil-full absolute inset-0" aria-hidden="true" />
 
-      <div className="text-on-photo relative flex min-h-svh flex-col px-6 pb-8 pt-10">
+      <div className="text-on-photo relative flex min-h-svh flex-col gutter pb-8 pt-10">
         <BrandMark variant="light" />
-        <p className="mt-3 text-[10px] tracking-latin text-white/60">
-          OMOTENASHI × TELL
+        <p className="mt-4 max-w-[240px] text-[11px] leading-6 tracking-jp-tight text-white/70">
+          {tCommon("tagline")}
         </p>
 
         <div className="mt-9 flex justify-end">

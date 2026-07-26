@@ -1,4 +1,4 @@
-# OMOTELL prototype development process
+# kataribe（語り部）prototype development process
 
 ## Purpose
 

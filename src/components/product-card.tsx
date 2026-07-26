@@ -1,6 +1,9 @@
+"use client";
+
+import {useTranslations} from "next-intl";
 import type {Product} from "@/types/content";
 import {getLocalizedText} from "@/lib/localized";
-import {ImageWithFallback} from "./image-with-fallback";
+import {Media} from "./media";
 import {Chevron} from "./glyphs";
 import {Link} from "@/i18n/navigation";
 
@@ -15,19 +18,22 @@ export function ProductCard({
   locale,
   variant = "tile"
 }: ProductCardProps) {
+  const t = useTranslations("Common");
   const name = getLocalizedText(product.name, locale);
   const description = getLocalizedText(product.shortDescription, locale);
+  const placeholderLabel = t("photoPending");
 
   if (variant === "row") {
     return (
       <Link
         href={`/products/${product.slug}`}
         locale={locale}
-        className="grid min-h-[120px] grid-cols-[96px_1fr_20px] items-center gap-4 border-b border-rule bg-washi px-4 py-5"
+        className="gutter grid min-h-[120px] grid-cols-[96px_1fr_20px] items-center gap-4 border-b border-rule bg-washi py-5"
       >
-        <ImageWithFallback
+        <Media
           src={product.image}
           alt={getLocalizedText(product.imageAlt, locale)}
+          placeholderLabel={placeholderLabel}
           width={192}
           height={192}
           sizes="96px"
@@ -54,9 +60,10 @@ export function ProductCard({
       locale={locale}
       className="block w-[148px] flex-none snap-start"
     >
-      <ImageWithFallback
+      <Media
         src={product.image}
         alt={getLocalizedText(product.imageAlt, locale)}
+        placeholderLabel={placeholderLabel}
         width={296}
         height={370}
         sizes="148px"

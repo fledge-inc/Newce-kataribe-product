@@ -1,4 +1,4 @@
-# OMOTELL user prototype blueprint
+# kataribe（語り部）user prototype blueprint
 
 ## 1. Screen and component inventory
 

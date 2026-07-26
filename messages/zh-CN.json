@@ -1,8 +1,164 @@
 {
-  "Common": {"brand":"OMOTELL","changeLanguage":"切换语言","menu":"菜单","back":"返回","viewAll":"查看全部","learnMore":"了解更多","imageUnavailable":"无法显示图片","loading":"加载中","noResults":"未找到商品","clearFilters":"清除筛选"},
-  "Language": {"title":"请选择语言","subtitle":"选择您偏好的语言","continue":"继续"},
-  "Store": {"recommended":"本月推荐","categories":"按类别查找","guideTitle":"初次了解高汤","guideBody":"了解高汤的选择方法和日常使用方式。","storeInfo":"店铺信息"},
-  "Products": {"title":"商品一览","searchPlaceholder":"搜索商品名或关键词","count":"{count}件商品","compare":"比较"},
-  "Product": {"recommendedFor":"推荐给","features":"特点","usage":"用法","materials":"食材与工艺","comparison":"比较","details":"详情","usageTitle":"基本熬制方法","showShelf":"查看卖场","showStaff":"出示给店员","share":"分享与保存","videoCaption":"可显示字幕"},
-  "Nav": {"home":"推荐","products":"商品","recipes":"食谱","store":"店铺"}
+  "Common": {
+    "brand": "语部 kataribe",
+    "tagline": "以旅途的语言，传递匠人的心意。",
+    "changeLanguage": "切换语言",
+    "menu": "菜单",
+    "back": "返回",
+    "close": "关闭",
+    "viewAll": "查看全部",
+    "learnMore": "了解更多",
+    "imageUnavailable": "无法显示图片",
+    "photoPending": "照片准备中",
+    "loading": "加载中",
+    "noResults": "未找到商品",
+    "clearFilters": "清除筛选"
+  },
+  "Language": {
+    "title": "请选择语言",
+    "subtitle": "Please select your language",
+    "continue": "以此语言浏览"
+  },
+  "Store": {
+    "recommended": "本月推荐",
+    "categories": "按分类浏览",
+    "guideTitle": "初次接触高汤",
+    "guideBody": "为您介绍高汤的选择方法与基本用法。",
+    "storeInfo": "店铺信息",
+    "hours": "营业时间",
+    "viewMap": "查看店内地图"
+  },
+  "Products": {
+    "title": "商品一览",
+    "searchPlaceholder": "按名称或关键词搜索",
+    "count": "{count}件商品",
+    "compare": "比较",
+    "compareCancel": "取消选择",
+    "compareHint": "请选择2至3件商品进行比较",
+    "compareGo": "比较{count}件",
+    "compareMax": "最多可选3件"
+  },
+  "Product": {
+    "recommendedFor": "推荐给这样的您",
+    "features": "特点",
+    "usage": "用法",
+    "materials": "食材・工艺",
+    "comparison": "比较",
+    "details": "详情",
+    "usageTitle": "基本熬煮方法",
+    "showShelf": "查看卖场",
+    "showStaff": "出示给店员",
+    "share": "分享・保存",
+    "videoCaption": "可显示字幕",
+    "whyChosen": "为何广受青睐",
+    "taste": "味道与香气",
+    "ingredientsHeading": "配料",
+    "allergensHeading": "过敏原",
+    "nutritionHeading": "营养成分",
+    "relatedRecipes": "推荐食谱"
+  },
+  "Feature": {
+    "selected-ingredients": "严选食材",
+    "no-additives": "无添加",
+    "careful-process": "精心工艺",
+    "easy-to-use": "易于使用",
+    "gift-ready": "适合送礼",
+    "long-life": "可久存"
+  },
+  "Allergen": {
+    "wheat": "小麦",
+    "soy": "大豆",
+    "milk": "乳",
+    "egg": "蛋",
+    "shrimp": "虾",
+    "mackerel": "鲭鱼",
+    "none": "不含特定原材料"
+  },
+  "Nutrition": {
+    "energy": "能量",
+    "protein": "蛋白质",
+    "fat": "脂肪",
+    "carbohydrate": "碳水化合物",
+    "salt": "食盐等量"
+  },
+  "Recipes": {
+    "title": "食谱",
+    "lead": "用高汤在家就能做的料理。",
+    "minutes": "约{count}分钟",
+    "serves": "{count}人份",
+    "ingredientsHeading": "材料",
+    "stepsHeading": "做法",
+    "usedProducts": "使用的商品",
+    "count": "{count}道食谱"
+  },
+  "Compare": {
+    "title": "比较",
+    "lead": "并排比较相似商品，选出适合自己的一款。",
+    "empty": "尚未选择要比较的商品。",
+    "emptyAction": "从商品一览中选择",
+    "reset": "重置比较",
+    "note": "最多可并排比较3件商品。",
+    "base": "基底",
+    "taste": "风味",
+    "dishes": "推荐料理",
+    "usage": "使用方法",
+    "dietary": "饮食限制",
+    "beginner": "新手友好度",
+    "gift": "适合送礼度"
+  },
+  "Staff": {
+    "title": "出示给店员",
+    "shelfIs": "卖场位于{area}",
+    "showThis": "请将此画面出示给店员",
+    "mapLabel": "店内地图",
+    "backToProduct": "返回商品页面"
+  },
+  "Survey": {
+    "title": "问卷",
+    "intro": "请协助填写问卷（约1分钟）",
+    "q_understanding": "您了解这款商品了吗？",
+    "q_intent": "您想购买吗？",
+    "q_helpful": "最有参考价值的信息是什么？",
+    "o_well": "很好理解",
+    "o_somewhat": "大致理解",
+    "o_not-really": "不太理解",
+    "o_yes": "想",
+    "o_neutral": "一般",
+    "o_no": "不想",
+    "o_overview": "商品介绍",
+    "o_usage": "用法・食谱",
+    "o_materials": "食材・工艺",
+    "o_comparison": "比较",
+    "o_nutrition": "配料・营养",
+    "o_other": "其他",
+    "submit": "提交",
+    "thanksTitle": "感谢您的协助",
+    "thanksBody": "您的意见将用于今后的改进。",
+    "prototypeNote": "这是原型，回答不会被发送或保存。",
+    "backHome": "返回店铺首页"
+  },
+  "Share": {
+    "title": "分享此商品",
+    "close": "关闭",
+    "system": "使用设备分享功能",
+    "mail": "邮件",
+    "copyLink": "复制链接",
+    "copied": "已复制",
+    "saveTitle": "保存到收藏",
+    "save": "加入收藏",
+    "saved": "已加入收藏"
+  },
+  "Favorites": {
+    "title": "收藏",
+    "lead": "您保存以便稍后查看的商品。",
+    "empty": "尚未保存任何商品。",
+    "emptyAction": "查看商品一览",
+    "remove": "从收藏中移除"
+  },
+  "Nav": {
+    "home": "推荐",
+    "products": "商品",
+    "recipes": "食谱",
+    "store": "店铺"
+  }
 }

@@ -47,18 +47,12 @@ export function BottomNav() {
   const locale = useLocale();
   const pathname = usePathname();
 
-  // ハッシュ項目（/store#recipes 等）は同一ページ内アンカーなので、
-  // ルートで見ると常に /store に一致してしまう。現在地の印は付けない。
+  // レシピが実ルートになったので、4項目すべてが素直なルート一致で判定できる。
   const items = [
-    {href: "/store", label: t("home"), glyph: "home", route: "/store"},
-    {
-      href: "/products",
-      label: t("products"),
-      glyph: "products",
-      route: "/products"
-    },
-    {href: "/store#recipes", label: t("recipes"), glyph: "recipes", route: null},
-    {href: "/store#info", label: t("store"), glyph: "store", route: null}
+    {href: "/store", label: t("home"), glyph: "home", exact: true},
+    {href: "/products", label: t("products"), glyph: "products", exact: false},
+    {href: "/recipes", label: t("recipes"), glyph: "recipes", exact: false},
+    {href: "/store#info", label: t("store"), glyph: "store", exact: true}
   ] as const;
 
   return (
@@ -67,10 +61,14 @@ export function BottomNav() {
       aria-label="Primary"
     >
       {items.map((item) => {
+        const route = item.href.split("#")[0];
+        // 「店舗情報」は /store のページ内アンカーなので、現在地の印は付けない
         const active =
-          item.route === "/store"
-            ? pathname === "/store"
-            : item.route !== null && pathname.startsWith(item.route);
+          item.href.includes("#")
+            ? false
+            : item.exact
+              ? pathname === route
+              : pathname.startsWith(route);
 
         return (
           <Link

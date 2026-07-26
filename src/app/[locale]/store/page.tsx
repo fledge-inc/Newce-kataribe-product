@@ -49,14 +49,14 @@ export default async function StorePage({
           src={store.heroImage}
           alt={getLocalizedText(store.heroImageAlt, locale)}
           fill
-          sizes="(max-width: 430px) 100vw, 390px"
+          sizes="(max-width: 639px) 100vw, 420px"
           priority
           className="absolute inset-0"
           imageClassName="object-cover"
         />
         <div className="veil-hero absolute inset-0" aria-hidden="true" />
 
-        <div className="text-on-photo absolute inset-0 flex flex-col px-6 pb-8 pt-[76px]">
+        <div className="text-on-photo absolute inset-0 flex flex-col gutter pb-8 pt-[76px]">
           <div className="flex flex-1 justify-between gap-4">
             <SeasonalDate locale={locale} variant="light" className="pt-1" />
 
@@ -81,7 +81,7 @@ export default async function StorePage({
 
       {/* 今月のおすすめ — 横スクロールのレール */}
       <section className="bg-kinari pt-11">
-        <div className="px-6">
+        <div className="gutter">
           <SectionHeader
             title={t("Store.recommended")}
             action={t("Common.viewAll")}
@@ -89,8 +89,8 @@ export default async function StorePage({
             locale={locale}
           />
         </div>
-        {/* scroll-px-6 がないと snap-start が左パディングを飲み込んでしまう */}
-        <div className="hide-scrollbar mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-6 px-6 pb-2">
+        {/* scroll-gutter がないと snap-start が左余白を飲み込んでしまう */}
+        <div className="hide-scrollbar scroll-gutter gutter mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2">
           {featured.map((product) => (
             <ProductCard key={product.id} product={product} locale={locale} />
           ))}
@@ -100,7 +100,7 @@ export default async function StorePage({
 
       {/* カテゴリー — 囲みをやめ、縦ヘアラインで 4 分割 */}
       <section className="mt-11 border-y border-rule bg-washi py-9">
-        <div className="px-6">
+        <div className="gutter">
           <SectionHeader title={t("Store.categories")} locale={locale} />
         </div>
         <div className="mt-6 grid grid-cols-4">
@@ -125,7 +125,7 @@ export default async function StorePage({
       {/* だしのご案内 — 全画面の写真バンド */}
       <section id="recipes" className="section-anchor">
         <Link
-          href="/products/kayanoya-dashi#usage"
+          href="/recipes"
           locale={locale}
           className="on-dark relative block aspect-[390/280] w-full overflow-hidden bg-sumi text-white"
         >
@@ -133,12 +133,12 @@ export default async function StorePage({
             src="/images/recipes/dashi-pot.jpg"
             alt=""
             fill
-            sizes="(max-width: 430px) 100vw, 390px"
+            sizes="(max-width: 639px) 100vw, 420px"
             className="absolute inset-0"
             imageClassName="object-cover"
           />
           <div className="veil-band absolute inset-0" aria-hidden="true" />
-          <div className="text-on-photo absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
+          <div className="text-on-photo absolute inset-0 flex flex-col items-center justify-center gutter text-center">
             <p className="text-[9px] tracking-latin text-white/70">
               DASHI GUIDE
             </p>
@@ -158,7 +158,7 @@ export default async function StorePage({
       {/* 店舗情報 — 墨のバンドで締める */}
       <section
         id="info"
-        className="section-anchor bg-sumi px-6 pb-14 pt-11 text-white"
+        className="section-anchor bg-sumi gutter pb-14 pt-11 text-white"
       >
         <div className="flex flex-col items-center">
           <span className="h-5 w-px bg-white/40" aria-hidden="true" />
@@ -173,6 +173,19 @@ export default async function StorePage({
           <p className="mt-3 text-[12px] leading-7 tracking-jp-tight text-white/70">
             {getLocalizedText(store.address, locale)}
           </p>
+          <p className="mt-4 flex items-center justify-center gap-3 text-[11px] tracking-jp text-white/70">
+            <span>{t("Store.hours")}</span>
+            <span className="h-2.5 w-px bg-white/30" aria-hidden="true" />
+            <span>{getLocalizedText(store.hours, locale)}</span>
+          </p>
+          <Link
+            href="/favorites"
+            locale={locale}
+            className="mincho mt-6 inline-flex min-h-11 items-center gap-2 border-b border-white/45 px-1 text-[11px] tracking-jp text-white/80"
+          >
+            {t("Favorites.title")}
+            <CircleChevron size={20} />
+          </Link>
         </div>
         <p className="mincho mt-9 text-center text-[9px] tracking-latin text-white/45">
           久原本家　KUBARA HONKE

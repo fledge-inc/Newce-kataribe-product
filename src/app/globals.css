@@ -12,7 +12,11 @@
   --rule: #dfd9cc;
   --rule-strong: #c6beae;
   --shu: #9a3b2c;
-  --shell-width: 390px;
+
+  /* PC プレビュー時のシェル幅。スマホ幅では効かせない（下の .mobile-shell 参照） */
+  --shell-width: 420px;
+  /* 左右の基本余白。ここ一箇所で全画面を調整する */
+  --gutter: 20px;
 
   --mincho: "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", "Yu Mincho",
     游明朝体, YuMincho, "Noto Serif CJK JP", var(--font-noto-serif-jp),
@@ -54,9 +58,13 @@ a:focus-visible {
   outline-color: #ffffff;
 }
 
+/*
+ * スマホ幅では常に全幅。額装するのは PC プレビュー（640px 以上）のときだけ。
+ * 以前は無条件に max-width:390px を掛けていたため、440px 幅の大型 iPhone で
+ * 左右に墨色の帯が 25px ずつ出ていた。
+ */
 .mobile-shell {
   width: 100%;
-  max-width: var(--shell-width);
   min-height: 100svh;
   margin: 0 auto;
   overflow-x: clip;
@@ -70,8 +78,28 @@ a:focus-visible {
   left: 0;
   z-index: 40;
   width: 100%;
-  max-width: var(--shell-width);
   margin-inline: auto;
+}
+
+/* シェルと固定要素は必ず同じ条件で絞る。ズレるとナビと CTA が本体と食い違う */
+@media (min-width: 640px) {
+  .mobile-shell,
+  .mobile-fixed {
+    max-width: var(--shell-width);
+  }
+}
+
+/* 左右余白。--gutter 一箇所で全画面を調整できるようにする */
+.gutter {
+  padding-inline: var(--gutter);
+}
+
+.gutter-x {
+  margin-inline: calc(var(--gutter) * -1);
+}
+
+.scroll-gutter {
+  scroll-padding-inline: var(--gutter);
 }
 
 /* 明朝 — 見出しは全ロケール、本文は ja / zh-* のみ */
@@ -183,7 +211,8 @@ a:focus-visible {
   scroll-margin-top: 112px;
 }
 
-@media (max-width: 430px) {
+/* 額装しない幅では地色も生成りに揃え、継ぎ目を消す（.mobile-shell と同じ境界） */
+@media (max-width: 639px) {
   html,
   body {
     background: var(--kinari);

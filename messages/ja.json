@@ -1,12 +1,15 @@
 {
   "Common": {
-    "brand": "OMOTELL",
+    "brand": "語り部",
+    "tagline": "つくり手の言葉を、旅の言葉で。",
     "changeLanguage": "言語を変更",
     "menu": "メニュー",
     "back": "戻る",
+    "close": "閉じる",
     "viewAll": "すべて見る",
     "learnMore": "詳しく見る",
     "imageUnavailable": "画像を表示できません",
+    "photoPending": "写真調整中",
     "loading": "読み込み中",
     "noResults": "商品が見つかりませんでした",
     "clearFilters": "条件をクリア"
@@ -21,13 +24,19 @@
     "categories": "カテゴリーから探す",
     "guideTitle": "はじめての方へ",
     "guideBody": "だしの選び方と、基本の使い方をご案内します。",
-    "storeInfo": "店舗情報"
+    "storeInfo": "店舗情報",
+    "hours": "営業時間",
+    "viewMap": "館内図を見る"
   },
   "Products": {
     "title": "商品一覧",
     "searchPlaceholder": "商品名・キーワードで検索",
     "count": "{count}件の商品",
-    "compare": "比較する"
+    "compare": "比較する",
+    "compareCancel": "選択をやめる",
+    "compareHint": "比較したい商品を2〜3件選んでください",
+    "compareGo": "{count}件を比較",
+    "compareMax": "3件まで選べます"
   },
   "Product": {
     "recommendedFor": "こんな方におすすめ",
@@ -40,7 +49,111 @@
     "showShelf": "売場を確認",
     "showStaff": "店員に見せる",
     "share": "共有・保存",
-    "videoCaption": "字幕を表示できます"
+    "videoCaption": "字幕を表示できます",
+    "whyChosen": "なぜ選ばれているか",
+    "taste": "味と香り",
+    "ingredientsHeading": "原材料",
+    "allergensHeading": "アレルギー",
+    "nutritionHeading": "栄養成分表示",
+    "relatedRecipes": "おすすめレシピ"
+  },
+  "Feature": {
+    "selected-ingredients": "厳選素材",
+    "no-additives": "化学調味料・保存料無添加",
+    "careful-process": "手間をかけた製法",
+    "easy-to-use": "使いやすい",
+    "gift-ready": "贈りものに",
+    "long-life": "長く使える"
+  },
+  "Allergen": {
+    "wheat": "小麦",
+    "soy": "大豆",
+    "milk": "乳",
+    "egg": "卵",
+    "shrimp": "えび",
+    "mackerel": "さば",
+    "none": "特定原材料の使用なし"
+  },
+  "Nutrition": {
+    "energy": "エネルギー",
+    "protein": "たんぱく質",
+    "fat": "脂質",
+    "carbohydrate": "炭水化物",
+    "salt": "食塩相当量"
+  },
+  "Recipes": {
+    "title": "レシピ",
+    "lead": "だしを使った、家庭でつくれる料理。",
+    "minutes": "約{count}分",
+    "serves": "{count}人分",
+    "ingredientsHeading": "材料",
+    "stepsHeading": "つくり方",
+    "usedProducts": "使用する商品",
+    "count": "{count}品のレシピ"
+  },
+  "Compare": {
+    "title": "比較",
+    "lead": "似た商品を並べて、自分に合うものを選べます。",
+    "empty": "比較する商品が選ばれていません。",
+    "emptyAction": "商品一覧から選ぶ",
+    "reset": "比較をリセット",
+    "note": "最大3商品まで並べられます。",
+    "base": "ベース",
+    "taste": "味わい",
+    "dishes": "おすすめ料理",
+    "usage": "使用方法",
+    "dietary": "食事制限",
+    "beginner": "初心者向け度",
+    "gift": "ギフト適性"
+  },
+  "Staff": {
+    "title": "店員に見せる",
+    "shelfIs": "売場は{area}です",
+    "showThis": "この画面を店員にお見せください",
+    "mapLabel": "館内図",
+    "backToProduct": "商品ページに戻る"
+  },
+  "Survey": {
+    "title": "アンケート",
+    "intro": "アンケートにご協力ください（1分で終わります）",
+    "q_understanding": "この商品について理解できましたか？",
+    "q_intent": "購入したいと思いましたか？",
+    "q_helpful": "最も参考になった情報は何ですか？",
+    "o_well": "よく理解できた",
+    "o_somewhat": "まあ理解できた",
+    "o_not-really": "あまり理解できなかった",
+    "o_yes": "思う",
+    "o_neutral": "どちらでもない",
+    "o_no": "思わない",
+    "o_overview": "商品紹介",
+    "o_usage": "使い方・レシピ",
+    "o_materials": "素材・製法",
+    "o_comparison": "比較",
+    "o_nutrition": "原材料・栄養",
+    "o_other": "その他",
+    "submit": "送信する",
+    "thanksTitle": "ご協力ありがとうございました",
+    "thanksBody": "いただいた声は今後の改善に役立てます。",
+    "prototypeNote": "これは試作です。回答は送信も保存もされません。",
+    "backHome": "店舗トップに戻る"
+  },
+  "Share": {
+    "title": "この商品をシェア",
+    "close": "閉じる",
+    "system": "端末の共有機能を使う",
+    "mail": "メール",
+    "copyLink": "リンクをコピー",
+    "copied": "コピーしました",
+    "saveTitle": "あとで見る（お気に入り）に保存",
+    "save": "お気に入りに追加",
+    "saved": "お気に入りに追加済み"
+  },
+  "Favorites": {
+    "title": "お気に入り",
+    "lead": "あとで見るために保存した商品です。",
+    "empty": "まだ保存された商品はありません。",
+    "emptyAction": "商品一覧を見る",
+    "remove": "お気に入りから外す"
   },
   "Nav": {
     "home": "おすすめ",

@@ -15,8 +15,9 @@ const notoSerif = Noto_Serif_JP({
 });
 
 export const metadata: Metadata = {
-  title: "OMOTELL",
-  description: "店頭の商品ストーリーを多言語で伝えるモバイルWebアプリ"
+  title: "語り部 kataribe",
+  description:
+    "つくり手の言葉を、旅の言葉で。店頭の商品の物語を多言語で伝えるモバイルWebアプリ"
 };
 
 export default function RootLayout({

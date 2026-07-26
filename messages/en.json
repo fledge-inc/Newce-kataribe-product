@@ -1,8 +1,164 @@
 {
-  "Common": {"brand":"OMOTELL","changeLanguage":"Change language","menu":"Menu","back":"Back","viewAll":"View all","learnMore":"Learn more","imageUnavailable":"Image unavailable","loading":"Loading","noResults":"No products found","clearFilters":"Clear filters"},
-  "Language": {"title":"Select your language","subtitle":"Choose the language you prefer","continue":"Continue"},
-  "Store": {"recommended":"This month's picks","categories":"Browse by category","guideTitle":"New to dashi?","guideBody":"Learn how to choose dashi and use it in everyday cooking.","storeInfo":"Store information"},
-  "Products": {"title":"Products","searchPlaceholder":"Search products or keywords","count":"{count} products","compare":"Compare"},
-  "Product": {"recommendedFor":"Recommended for","features":"Features","usage":"How to use","materials":"Ingredients","comparison":"Compare","details":"Details","usageTitle":"Basic preparation","showShelf":"Find in store","showStaff":"Show to staff","share":"Share & save","videoCaption":"Captions are available"},
-  "Nav": {"home":"Picks","products":"Products","recipes":"Recipes","store":"Store"}
+  "Common": {
+    "brand": "kataribe",
+    "tagline": "The maker's words, in the language of your journey.",
+    "changeLanguage": "Change language",
+    "menu": "Menu",
+    "back": "Back",
+    "close": "Close",
+    "viewAll": "View all",
+    "learnMore": "Learn more",
+    "imageUnavailable": "Image unavailable",
+    "photoPending": "Photo coming soon",
+    "loading": "Loading",
+    "noResults": "No products found",
+    "clearFilters": "Clear filters"
+  },
+  "Language": {
+    "title": "Please select your language",
+    "subtitle": "Choose the language for your visit",
+    "continue": "Continue"
+  },
+  "Store": {
+    "recommended": "This month's picks",
+    "categories": "Browse by category",
+    "guideTitle": "New to dashi",
+    "guideBody": "How to choose a dashi, and how to use it.",
+    "storeInfo": "Store information",
+    "hours": "Opening hours",
+    "viewMap": "View floor map"
+  },
+  "Products": {
+    "title": "Products",
+    "searchPlaceholder": "Search by name or keyword",
+    "count": "{count} products",
+    "compare": "Compare",
+    "compareCancel": "Cancel",
+    "compareHint": "Select 2 or 3 products to compare",
+    "compareGo": "Compare {count}",
+    "compareMax": "Up to 3 products"
+  },
+  "Product": {
+    "recommendedFor": "Recommended for",
+    "features": "Overview",
+    "usage": "How to use",
+    "materials": "Ingredients",
+    "comparison": "Compare",
+    "details": "Details",
+    "usageTitle": "How to brew",
+    "showShelf": "Find in store",
+    "showStaff": "Show to staff",
+    "share": "Share and save",
+    "videoCaption": "Subtitles available",
+    "whyChosen": "Why people choose it",
+    "taste": "Taste and aroma",
+    "ingredientsHeading": "Ingredients",
+    "allergensHeading": "Allergens",
+    "nutritionHeading": "Nutrition",
+    "relatedRecipes": "Recipes to try"
+  },
+  "Feature": {
+    "selected-ingredients": "Selected ingredients",
+    "no-additives": "No additives",
+    "careful-process": "Careful process",
+    "easy-to-use": "Easy to use",
+    "gift-ready": "Gift ready",
+    "long-life": "Keeps well"
+  },
+  "Allergen": {
+    "wheat": "Wheat",
+    "soy": "Soy",
+    "milk": "Milk",
+    "egg": "Egg",
+    "shrimp": "Shrimp",
+    "mackerel": "Mackerel",
+    "none": "No major allergens"
+  },
+  "Nutrition": {
+    "energy": "Energy",
+    "protein": "Protein",
+    "fat": "Fat",
+    "carbohydrate": "Carbohydrate",
+    "salt": "Salt equivalent"
+  },
+  "Recipes": {
+    "title": "Recipes",
+    "lead": "Dishes you can make at home with dashi.",
+    "minutes": "About {count} min",
+    "serves": "Serves {count}",
+    "ingredientsHeading": "Ingredients",
+    "stepsHeading": "Method",
+    "usedProducts": "Products used",
+    "count": "{count} recipes"
+  },
+  "Compare": {
+    "title": "Compare",
+    "lead": "Line up similar products and find the one that suits you.",
+    "empty": "No products selected for comparison.",
+    "emptyAction": "Choose from the product list",
+    "reset": "Reset comparison",
+    "note": "Up to three products can be compared.",
+    "base": "Base",
+    "taste": "Taste",
+    "dishes": "Best for",
+    "usage": "Form",
+    "dietary": "Dietary",
+    "beginner": "For beginners",
+    "gift": "As a gift"
+  },
+  "Staff": {
+    "title": "Show to staff",
+    "shelfIs": "Located in the {area}",
+    "showThis": "Please show this screen to a staff member",
+    "mapLabel": "Floor map",
+    "backToProduct": "Back to the product"
+  },
+  "Survey": {
+    "title": "Survey",
+    "intro": "Please help us with a short survey (about a minute)",
+    "q_understanding": "Did you understand this product?",
+    "q_intent": "Would you like to buy it?",
+    "q_helpful": "Which information helped you most?",
+    "o_well": "Understood well",
+    "o_somewhat": "Somewhat",
+    "o_not-really": "Not really",
+    "o_yes": "Yes",
+    "o_neutral": "Neutral",
+    "o_no": "No",
+    "o_overview": "Overview",
+    "o_usage": "Usage and recipes",
+    "o_materials": "Ingredients",
+    "o_comparison": "Comparison",
+    "o_nutrition": "Nutrition",
+    "o_other": "Other",
+    "submit": "Submit",
+    "thanksTitle": "Thank you",
+    "thanksBody": "Your feedback helps us improve.",
+    "prototypeNote": "This is a prototype. Answers are neither sent nor stored.",
+    "backHome": "Back to the store"
+  },
+  "Share": {
+    "title": "Share this product",
+    "close": "Close",
+    "system": "Use device sharing",
+    "mail": "Email",
+    "copyLink": "Copy link",
+    "copied": "Copied",
+    "saveTitle": "Save to favorites",
+    "save": "Add to favorites",
+    "saved": "Saved to favorites"
+  },
+  "Favorites": {
+    "title": "Favorites",
+    "lead": "Products you saved to look at later.",
+    "empty": "Nothing saved yet.",
+    "emptyAction": "Browse products",
+    "remove": "Remove from favorites"
+  },
+  "Nav": {
+    "home": "Picks",
+    "products": "Products",
+    "recipes": "Recipes",
+    "store": "Store"
+  }
 }
