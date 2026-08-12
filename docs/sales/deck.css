@@ -1,0 +1,170 @@
+/* ==========================================================================
+   語り部 kataribe ／ 提案書
+   相手は投資家ではなく、老舗食品メーカーの事業担当者・決裁者。
+   市場規模やスケールの語りではなく、店頭の現実・現場の手間・社内で通る形で組む。
+
+   意匠は製品（Web アプリ）と同じ墨・生成り・朱。ただし投影を前提に、
+   見出しは明朝、本文はゴシックにして、プロジェクタで線が飛ばないようにする。
+   ========================================================================== */
+
+:root {
+  --sumi: #14140f;
+  --ink: #1b1917;
+  --ink-soft: #423c34;
+  --muted: #67604f;
+  --kinari: #f3efe7;
+  --washi: #faf8f3;
+  --rule: #dcd6c8;
+  --rule-strong: #c0b8a6;
+  --shu: #9a3b2c;
+
+  --mincho: "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", "Yu Mincho", 游明朝体,
+    YuMincho, "Noto Serif CJK JP", "Noto Serif JP", "Times New Roman", serif;
+  --gothic: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "Yu Gothic Medium",
+    "Yu Gothic", 游ゴシック体, YuGothic, "Noto Sans CJK JP", "Noto Sans JP",
+    system-ui, sans-serif;
+
+  --w: 1920px;
+  --h: 1080px;
+  --pad: 88px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #2a2823;
+  font-family: var(--gothic);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- スライドの器 ------------------------------------------------------- */
+.deck { display: flex; flex-direction: column; align-items: center; gap: 28px; padding: 28px 0 60px; }
+
+.slide {
+  position: relative;
+  width: var(--w); height: var(--h);
+  background: var(--kinari);
+  overflow: hidden; flex: none;
+  transform: scale(var(--scale, 1));
+  transform-origin: top center;
+  margin-bottom: calc((var(--scale, 1) - 1) * var(--h));
+}
+.slide__inner { position: absolute; inset: 0; padding: var(--pad); display: flex; flex-direction: column; }
+
+/* --- ヘッダー / フッター ------------------------------------------------ */
+.hdr, .ftr {
+  position: absolute; left: var(--pad); right: var(--pad);
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 19px; letter-spacing: .1em; color: var(--muted);
+}
+.hdr { top: 48px; padding-bottom: 16px; border-bottom: 1px solid var(--rule-strong); }
+.ftr { bottom: 40px; padding-top: 16px; border-top: 1px solid var(--rule-strong); }
+.hdr__l { color: var(--ink); font-weight: 600; }
+.on-dark .hdr, .on-dark .ftr { color: rgba(255,255,255,.86); border-color: rgba(255,255,255,.34); }
+.on-dark .hdr__l { color: #fff; }
+
+/* --- 見出し ------------------------------------------------------------- */
+.eyebrow { font-family: var(--mincho); font-size: 22px; letter-spacing: .16em; color: var(--shu); margin-bottom: 18px; }
+.on-dark .eyebrow { color: #fff; }
+
+h1.title { font-family: var(--mincho); font-size: 74px; font-weight: 600; line-height: 1.32; letter-spacing: .05em; }
+h2.head  { font-family: var(--mincho); font-size: 52px; font-weight: 600; line-height: 1.34; letter-spacing: .05em; }
+
+/* 本文はゴシック（投影で明朝の細線が飛ぶのを避ける） */
+.lede { font-size: 23px; line-height: 1.8; color: var(--ink-soft); letter-spacing: .03em; margin-top: 22px; max-width: 1180px; }
+
+.body-area { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 30px 0 6px; }
+.body-top  { flex: 1; display: flex; flex-direction: column; padding: 30px 0 6px; }
+.fill { flex: 1; display: flex; flex-direction: column; justify-content: center; min-height: 0; }
+
+/* --- 罫線のみのリスト --------------------------------------------------- */
+.rows { border-top: 1px solid var(--rule-strong); width: 100%; }
+.row { display: grid; grid-template-columns: 136px 1fr; gap: 32px; align-items: baseline;
+       padding: 24px 0; border-bottom: 1px solid var(--rule); }
+.row__n { font-family: var(--mincho); font-size: 26px; color: var(--shu); letter-spacing: .08em; white-space: nowrap; }
+.row__t { font-family: var(--mincho); font-size: 29px; letter-spacing: .04em; line-height: 1.5; }
+.row__d { font-size: 19px; line-height: 1.72; color: var(--muted); margin-top: 9px; letter-spacing: .02em; }
+.on-dark .rows { border-color: rgba(255,255,255,.4); }
+.on-dark .row { border-color: rgba(255,255,255,.24); }
+.on-dark .row__n { color: rgba(255,255,255,.82); }
+.on-dark .row__d, .on-dark .lede, .on-dark .card__d { color: rgba(255,255,255,.88); }
+
+/* --- 数字 --------------------------------------------------------------- */
+.stats { display: grid; border-top: 1px solid var(--rule-strong); border-bottom: 1px solid var(--rule-strong); }
+.stat { padding: 34px 34px 32px; border-left: 1px solid var(--rule); }
+.stat:first-child { border-left: 0; padding-left: 0; }
+.stat__l { font-size: 19px; letter-spacing: .06em; color: var(--muted); }
+.stat__v { font-family: var(--mincho); font-size: 72px; line-height: 1.06; margin-top: 16px; }
+.stat__v small { font-size: 30px; }
+.stat__s { font-size: 18px; color: var(--shu); margin-top: 14px; letter-spacing: .04em; }
+
+/* --- カード ------------------------------------------------------------- */
+.cards { display: grid; gap: 26px; }
+.cards--5 { grid-template-columns: repeat(5, 1fr); }
+.cards--4 { grid-template-columns: repeat(4, 1fr); }
+.cards--3 { grid-template-columns: repeat(3, 1fr); }
+.cards--2 { grid-template-columns: repeat(2, 1fr); }
+.card { border: 1px solid var(--rule); background: var(--washi); padding: 30px 28px; display: flex; flex-direction: column; }
+.card__n { font-family: var(--mincho); font-size: 21px; color: var(--shu); letter-spacing: .12em; }
+.card__t { font-family: var(--mincho); font-size: 29px; letter-spacing: .04em; margin-top: 14px; line-height: 1.45; }
+.card__d { font-size: 19px; line-height: 1.8; color: var(--muted); margin-top: 14px; }
+.card ul { margin-top: 14px; list-style: none; }
+.card li { font-size: 19px; line-height: 1.85; color: var(--ink-soft); padding-left: 18px; position: relative; }
+.card li::before { content: ""; position: absolute; left: 0; top: 14px; width: 7px; height: 1px; background: var(--rule-strong); }
+
+/* --- 表 ----------------------------------------------------------------- */
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 18px 20px; border-bottom: 1px solid var(--rule); font-size: 20px; letter-spacing: .02em; vertical-align: top; }
+thead th { font-family: var(--mincho); font-size: 21px; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--rule-strong); }
+td.k { font-family: var(--mincho); font-size: 23px; letter-spacing: .05em; width: 300px; }
+td.num { font-family: var(--mincho); font-size: 25px; text-align: right; }
+.t-quiet td { color: var(--muted); }
+.t-tight th, .t-tight td { padding: 12px 0; }
+
+/* 記入欄 */
+.blank { display: inline-block; min-width: 180px; border-bottom: 1px solid var(--shu);
+         color: var(--shu); font-family: var(--mincho); text-align: center; letter-spacing: .08em; }
+.blank::after { content: "ご相談"; font-size: .82em; opacity: .72; }
+.blank--num::after { content: "＿＿＿"; }
+.blank--co::after { content: "貴社にてご記入"; font-size: .72em; }
+
+/* --- 端末モック（実画面のスクリーンショットを入れる） -------------------- */
+.phone { border: 1px solid var(--rule-strong); background: var(--washi); padding: 10px; display: block;
+          width: 100%; max-width: var(--pw, 240px); margin-inline: auto; }
+.phone img { display: block; width: 100%; height: auto; }
+/* 画面比が縦長（約1:2.16）なので、幅の上限で高さを抑える */
+.ph-xs { --pw: 168px; } .ph-sm { --pw: 190px; } .ph-md { --pw: 216px; } .ph-lg { --pw: 260px; }
+.phone--dark { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.08); }
+.shot-cap { font-size: 17px; color: var(--muted); letter-spacing: .04em; margin-top: 12px; text-align: center; }
+.on-dark .shot-cap { color: rgba(255,255,255,.82); }
+
+/* --- 写真 --------------------------------------------------------------- */
+.slide--photo { background: var(--sumi); }
+.photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.veil { position: absolute; inset: 0; }
+.veil--hero { background: linear-gradient(to bottom, rgba(20,20,15,.76) 0%, rgba(20,20,15,.44) 34%, rgba(20,20,15,.68) 72%, rgba(20,20,15,.90) 100%); }
+.veil--side { background: linear-gradient(to right, rgba(20,20,15,.93) 0%, rgba(20,20,15,.90) 46%, rgba(20,20,15,.72) 74%, rgba(20,20,15,.42) 100%); }
+.veil--band { background: linear-gradient(to bottom, rgba(20,20,15,.54) 0%, rgba(20,20,15,.74) 46%, rgba(20,20,15,.74) 62%, rgba(20,20,15,.64) 100%); }
+.on-dark { color: #fff; }
+.txt-shadow { text-shadow: 0 1px 5px rgba(20,20,15,.72), 0 0 2px rgba(20,20,15,.5); }
+
+/* --- 細部 --------------------------------------------------------------- */
+.vrule { display: block; width: 1px; height: 40px; background: var(--rule-strong); }
+.on-dark .vrule { background: rgba(255,255,255,.55); }
+.seal { display: inline-block; width: 9px; height: 9px; background: var(--shu); }
+.src { font-size: 17px; color: var(--muted); letter-spacing: .02em; line-height: 1.7; }
+.kicker { font-family: var(--mincho); font-size: 25px; letter-spacing: .05em; line-height: 1.7; }
+.hl { color: var(--shu); }
+.gap-sm { height: 22px; } .gap-md { height: 36px; } .gap-lg { height: 54px; }
+.panel-dark { background: var(--sumi); color: #fff; padding: 34px 32px; }
+.panel-shu  { border: 1px solid var(--shu); padding: 34px 32px; }
+
+/* --- 印刷（1スライド＝1ページ） ----------------------------------------- */
+@page { size: 1920px 1080px; margin: 0; }
+@media print {
+  body { background: #fff; }
+  .deck { display: block; gap: 0; padding: 0; }
+  .slide { transform: none !important; margin: 0 !important; break-after: page; page-break-after: always; }
+  .slide:last-child { break-after: auto; page-break-after: auto; }
+}
