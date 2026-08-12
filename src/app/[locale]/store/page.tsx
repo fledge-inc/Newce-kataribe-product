@@ -1,22 +1,32 @@
 import {AppHeader} from "@/components/app-header";
 import {BottomNav} from "@/components/bottom-nav";
 import {
-  CategoryGlyph,
-  CircleChevron,
-  type CategoryGlyphName
-} from "@/components/glyphs";
-import {ImageWithFallback} from "@/components/image-with-fallback";
-import {ProductCard} from "@/components/product-card";
-import {SeasonalDate} from "@/components/seasonal-date";
-import {SectionHeader} from "@/components/section-header";
-import {categories, products, store} from "@/data/content";
+  StoreMapExperience,
+  type MapProduct
+} from "@/components/store-map-experience";
+import {products, store} from "@/data/content";
 import {getLocalizedText} from "@/lib/localized";
-import {tategakiClass} from "@/lib/typography";
-import {Link} from "@/i18n/navigation";
-import {getTranslations, setRequestLocale} from "next-intl/server";
+import {setRequestLocale} from "next-intl/server";
 
-/** 七十二候を出すので 1 時間ごとに再生成する。 */
-export const revalidate = 3600;
+const pinLayout = [
+  {x: 50, y: 66},
+  {x: 27, y: 67},
+  {x: 73, y: 67},
+  {x: 35, y: 46},
+  {x: 66, y: 46},
+  {x: 38, y: 31},
+  {x: 66, y: 31}
+] as const;
+
+const mapProductIds = [
+  "product-kayanoya-dashi",
+  "product-vegetable-dashi",
+  "product-reduced-salt-dashi",
+  "product-niboshi-dashi",
+  "product-chicken-dashi",
+  "product-golden-dashi",
+  "product-shiro-dashi"
+] as const;
 
 export default async function StorePage({
   params
@@ -25,173 +35,32 @@ export default async function StorePage({
 }) {
   const {locale} = await params;
   setRequestLocale(locale);
-  const t = await getTranslations();
 
-  const featured = store.featuredProductIds
-    .map((id) => products.find((product) => product.id === id))
-    .filter((product): product is (typeof products)[number] => Boolean(product));
+  const mapProducts = mapProductIds.flatMap((id, index): MapProduct[] => {
+    const product = products.find((candidate) => candidate.id === id);
+    const position = pinLayout[index];
 
-  const categoryGlyphs: CategoryGlyphName[] = [
-    "dashi",
-    "seasoning",
-    "gift",
-    "other"
-  ];
-  const tategaki = tategakiClass(locale);
+    if (!product || !position) return [];
+
+    return [
+      {
+        id: product.id,
+        slug: product.slug,
+        name: getLocalizedText(product.name, locale),
+        description: getLocalizedText(product.shortDescription, locale),
+        category: getLocalizedText(product.shelf.area, locale),
+        image: product.image,
+        imageAlt: getLocalizedText(product.imageAlt, locale),
+        x: position.x,
+        y: position.y
+      }
+    ];
+  });
 
   return (
     <main className="min-h-svh bg-kinari pb-[68px]">
       <AppHeader title={getLocalizedText(store.name, locale)} overlay />
-
-      {/* ヒーロー — 全画面幅、墨のグラデーション、縦組みの歓迎文 */}
-      <section className="on-dark relative -mt-[60px] aspect-[390/460] w-full overflow-hidden bg-sumi text-white">
-        <ImageWithFallback
-          src={store.heroImage}
-          alt={getLocalizedText(store.heroImageAlt, locale)}
-          fill
-          sizes="(max-width: 639px) 100vw, 420px"
-          priority
-          className="absolute inset-0"
-          imageClassName="object-cover"
-        />
-        <div className="veil-hero absolute inset-0" aria-hidden="true" />
-
-        <div className="text-on-photo absolute inset-0 flex flex-col gutter pb-8 pt-[76px]">
-          <div className="flex flex-1 justify-between gap-4">
-            <SeasonalDate locale={locale} variant="light" className="pt-1" />
-
-            {tategaki ? (
-              <p
-                className={`mincho ${tategaki} max-h-full text-[26px] leading-[1.7] tracking-jp`}
-              >
-                {getLocalizedText(store.welcomeTitle, locale)}
-              </p>
-            ) : (
-              <p className="mincho max-w-[190px] text-right text-[24px] leading-[1.5] tracking-jp-tight">
-                {getLocalizedText(store.welcomeTitle, locale)}
-              </p>
-            )}
-          </div>
-
-          <p className="mt-6 text-[11px] leading-6 tracking-jp-tight text-white/80">
-            {getLocalizedText(store.welcomeBody, locale)}
-          </p>
-        </div>
-      </section>
-
-      {/* 今月のおすすめ — 横スクロールのレール */}
-      <section className="bg-kinari pt-11">
-        <div className="gutter">
-          <SectionHeader
-            title={t("Store.recommended")}
-            action={t("Common.viewAll")}
-            href="/products"
-            locale={locale}
-          />
-        </div>
-        {/* scroll-gutter がないと snap-start が左余白を飲み込んでしまう */}
-        <div className="hide-scrollbar scroll-gutter gutter mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2">
-          {featured.map((product) => (
-            <ProductCard key={product.id} product={product} locale={locale} />
-          ))}
-          <span className="w-2 flex-none" aria-hidden="true" />
-        </div>
-      </section>
-
-      {/* カテゴリー — 囲みをやめ、縦ヘアラインで 4 分割 */}
-      <section className="mt-11 border-y border-rule bg-washi py-9">
-        <div className="gutter">
-          <SectionHeader title={t("Store.categories")} locale={locale} />
-        </div>
-        <div className="mt-6 grid grid-cols-4">
-          {categories.slice(1).map((category, index) => (
-            <Link
-              key={category.id}
-              href={`/products?category=${category.id}`}
-              locale={locale}
-              className={`flex min-h-[84px] flex-col items-center justify-center gap-3 px-1 text-center ${
-                index > 0 ? "border-l border-rule" : ""
-              }`}
-            >
-              <CategoryGlyph name={categoryGlyphs[index]} />
-              <span className="mincho text-[11px] tracking-jp">
-                {getLocalizedText(category.label, locale)}
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* だしのご案内 — 全画面の写真バンド */}
-      <section id="recipes" className="section-anchor">
-        <Link
-          href="/recipes"
-          locale={locale}
-          className="on-dark relative block aspect-[390/280] w-full overflow-hidden bg-sumi text-white"
-        >
-          <ImageWithFallback
-            src="/images/recipes/dashi-pot.jpg"
-            alt=""
-            fill
-            sizes="(max-width: 639px) 100vw, 420px"
-            className="absolute inset-0"
-            imageClassName="object-cover"
-          />
-          <div className="veil-band absolute inset-0" aria-hidden="true" />
-          <div className="text-on-photo absolute inset-0 flex flex-col items-center justify-center gutter text-center">
-            <p className="text-[9px] tracking-latin text-white/70">
-              DASHI GUIDE
-            </p>
-            <h2 className="mincho mt-4 text-[21px] tracking-jp">
-              {t("Store.guideTitle")}
-            </h2>
-            <p className="mt-3 max-w-[260px] text-[11px] leading-6 tracking-jp-tight text-white/80">
-              {t("Store.guideBody")}
-            </p>
-            <span className="mt-5 text-white/80">
-              <CircleChevron size={30} />
-            </span>
-          </div>
-        </Link>
-      </section>
-
-      {/* 店舗情報 — 墨のバンドで締める */}
-      <section
-        id="info"
-        className="section-anchor bg-sumi gutter pb-14 pt-11 text-white"
-      >
-        <div className="flex flex-col items-center">
-          <span className="h-5 w-px bg-white/40" aria-hidden="true" />
-          <h2 className="mincho mt-4 text-[15px] tracking-jp">
-            {t("Store.storeInfo")}
-          </h2>
-        </div>
-        <div className="mt-7 border-t border-white/20 pt-6 text-center">
-          <p className="mincho text-[17px] tracking-jp">
-            {getLocalizedText(store.name, locale)}
-          </p>
-          <p className="mt-3 text-[12px] leading-7 tracking-jp-tight text-white/70">
-            {getLocalizedText(store.address, locale)}
-          </p>
-          <p className="mt-4 flex items-center justify-center gap-3 text-[11px] tracking-jp text-white/70">
-            <span>{t("Store.hours")}</span>
-            <span className="h-2.5 w-px bg-white/30" aria-hidden="true" />
-            <span>{getLocalizedText(store.hours, locale)}</span>
-          </p>
-          <Link
-            href="/favorites"
-            locale={locale}
-            className="mincho mt-6 inline-flex min-h-11 items-center gap-2 border-b border-white/45 px-1 text-[11px] tracking-jp text-white/80"
-          >
-            {t("Favorites.title")}
-            <CircleChevron size={20} />
-          </Link>
-        </div>
-        <p className="mincho mt-9 text-center text-[9px] tracking-latin text-white/45">
-          久原本家　KUBARA HONKE
-        </p>
-      </section>
-
+      <StoreMapExperience locale={locale} products={mapProducts} />
       <BottomNav />
     </main>
   );

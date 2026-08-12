@@ -28,6 +28,15 @@
     "hours": "營業時間",
     "viewMap": "查看店內地圖"
   },
+  "StoreMap": {
+    "title": "店內地圖",
+    "hint": "點選圖釘查看商品",
+    "imageAlt": "茅乃舍店內俯視地圖",
+    "productsLabel": "店內地圖上的商品",
+    "openProduct": "開啟商品",
+    "viewDetails": "查看商品詳情",
+    "backToMap": "返回地圖"
+  },
   "Products": {
     "title": "商品一覽",
     "searchPlaceholder": "依名稱或關鍵字搜尋",

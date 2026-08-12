@@ -28,6 +28,15 @@
     "hours": "Opening hours",
     "viewMap": "View floor map"
   },
+  "StoreMap": {
+    "title": "Store map",
+    "hint": "Tap a pin to explore products",
+    "imageAlt": "Top-down map of the Kayanoya store",
+    "productsLabel": "Products on the store map",
+    "openProduct": "Open product",
+    "viewDetails": "View product details",
+    "backToMap": "Back to map"
+  },
   "Products": {
     "title": "Products",
     "searchPlaceholder": "Search by name or keyword",

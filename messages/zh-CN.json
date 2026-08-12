@@ -28,6 +28,15 @@
     "hours": "营业时间",
     "viewMap": "查看店内地图"
   },
+  "StoreMap": {
+    "title": "店内地图",
+    "hint": "点击图钉查看商品",
+    "imageAlt": "茅乃舎店内俯视地图",
+    "productsLabel": "店内地图上的商品",
+    "openProduct": "打开商品",
+    "viewDetails": "查看商品详情",
+    "backToMap": "返回地图"
+  },
   "Products": {
     "title": "商品一览",
     "searchPlaceholder": "按名称或关键词搜索",

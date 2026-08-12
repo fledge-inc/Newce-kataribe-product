@@ -28,6 +28,15 @@
     "hours": "営業時間",
     "viewMap": "館内図を見る"
   },
+  "StoreMap": {
+    "title": "店内マップ",
+    "hint": "ピンを押して、商品をご覧ください",
+    "imageAlt": "茅乃舎店内を上から見たマップ",
+    "productsLabel": "店内マップ上の商品",
+    "openProduct": "商品を開く",
+    "viewDetails": "商品詳細を見る",
+    "backToMap": "地図に戻る"
+  },
   "Products": {
     "title": "商品一覧",
     "searchPlaceholder": "商品名・キーワードで検索",

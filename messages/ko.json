@@ -28,6 +28,15 @@
     "hours": "영업시간",
     "viewMap": "매장 지도 보기"
   },
+  "StoreMap": {
+    "title": "매장 지도",
+    "hint": "핀을 눌러 상품을 확인해 보세요",
+    "imageAlt": "가야노야 매장을 위에서 본 지도",
+    "productsLabel": "매장 지도 위의 상품",
+    "openProduct": "상품 열기",
+    "viewDetails": "상품 상세 보기",
+    "backToMap": "지도로 돌아가기"
+  },
   "Products": {
     "title": "상품 목록",
     "searchPlaceholder": "이름・키워드로 검색",
