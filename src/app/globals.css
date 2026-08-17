@@ -11,7 +11,17 @@
   --washi: #faf8f3;
   --rule: #dfd9cc;
   --rule-strong: #c6beae;
-  --shu: #9a3b2c;
+  --shu: #b03527;
+
+  /* ロゴと英字サブタイトルの金茶。筆文字と併せてブランドの記名色にする */
+  --kogane: #a5813c;
+
+  /* デフォルメ店内マップの配色。地図の面はここでまとめて調整する */
+  --map-ground: #f6efdf;
+  --map-shelf: #eadec2;
+  --map-block: #f2e6cb;
+  --map-line: #cbb991;
+  --map-frame: #b9a884;
 
   /* PC プレビュー時のシェル幅。スマホ幅では効かせない（下の .mobile-shell 参照） */
   --shell-width: 420px;
@@ -21,6 +31,9 @@
   --mincho: "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", "Yu Mincho",
     游明朝体, YuMincho, "Noto Serif CJK JP", var(--font-noto-serif-jp),
     "Times New Roman", serif;
+
+  /* ロゴ「かたりべ」専用の筆書体。読み込めない環境では明朝に落とす */
+  --fude: var(--font-yuji-syuku), "Yuji Syuku", var(--mincho);
 }
 
 * {
@@ -197,6 +210,68 @@ a:focus-visible {
     rgb(20 20 15 / 0.93) 74%,
     rgb(20 20 15 / 0.96) 100%
   );
+}
+
+/* 筆書体 — ロゴ専用 */
+.fude {
+  font-family: var(--fude);
+}
+
+/*
+ * スクロールで下から現れる要素。Felissimo の読み物ページを参考に、
+ * ゆっくり長い緩急（ヌメッとした動き）で立ち上げる。
+ * prefers-reduced-motion では末尾の全体ルールが transition を打ち消す。
+ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/*
+ * 商品ものがたりの写真を和紙の地に溶け込ませる。
+ * 白背景の物撮りは multiply でほぼ完全に地と馴染み、
+ * 風景写真は端をマスクでぼかして紙に染み込んだように見せる。
+ */
+.photo-blend {
+  mix-blend-mode: multiply;
+}
+
+.photo-fade {
+  -webkit-mask-image: radial-gradient(
+    130% 115% at 60% 45%,
+    #000 48%,
+    rgb(0 0 0 / 0) 97%
+  );
+  mask-image: radial-gradient(
+    130% 115% at 60% 45%,
+    #000 48%,
+    rgb(0 0 0 / 0) 97%
+  );
+}
+
+/* 「03 / 20」のカウンター。番号が替わるたびに下からすっと差し替わる */
+@keyframes counter-swap {
+  from {
+    opacity: 0;
+    transform: translateY(0.45em);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.counter-swap {
+  display: inline-block;
+  animation: counter-swap 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hide-scrollbar {

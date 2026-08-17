@@ -1,78 +1,48 @@
 {
   "Common": {
-    "brand": "kataribe",
+    "brand": "Kataribe",
     "tagline": "The maker's words, in the language of your journey.",
     "changeLanguage": "Change language",
-    "menu": "Menu",
     "back": "Back",
     "close": "Close",
-    "viewAll": "View all",
-    "learnMore": "Learn more",
     "imageUnavailable": "Image unavailable",
     "photoPending": "Photo coming soon",
-    "loading": "Loading",
-    "noResults": "No products found",
-    "clearFilters": "Clear filters"
-  },
-  "Language": {
-    "title": "Please select your language",
-    "subtitle": "Choose the language for your visit",
-    "continue": "Continue"
-  },
-  "Store": {
-    "recommended": "This month's picks",
-    "categories": "Browse by category",
-    "guideTitle": "New to dashi",
-    "guideBody": "How to choose a dashi, and how to use it.",
-    "storeInfo": "Store information",
-    "hours": "Opening hours",
-    "viewMap": "View floor map"
+    "loading": "Loading"
   },
   "StoreMap": {
     "title": "Store map",
-    "hint": "Tap a pin to explore products",
-    "imageAlt": "Top-down map of the Kayanoya store",
     "productsLabel": "Products on the store map",
     "openProduct": "Open product",
-    "viewDetails": "View product details",
-    "backToMap": "Back to map"
+    "cashier": "Cashier",
+    "staffRoom": "Staff Room",
+    "vegetableCorner": "Vegetable\nCorner",
+    "seasoningCorner": "Seasoning\nCorner",
+    "giftCorner": "Gift\nCorner",
+    "stairs": "Stairs",
+    "entrance": "Entrance"
   },
-  "Products": {
-    "title": "Products",
-    "searchPlaceholder": "Search by name or keyword",
-    "count": "{count} products",
-    "compare": "Compare",
-    "compareCancel": "Cancel",
-    "compareHint": "Select 2 or 3 products to compare",
-    "compareGo": "Compare {count}",
-    "compareMax": "Up to 3 products"
-  },
-  "Product": {
-    "recommendedFor": "Recommended for",
-    "features": "Overview",
-    "usage": "How to use",
-    "materials": "Ingredients",
-    "comparison": "Compare",
-    "details": "Details",
-    "usageTitle": "How to brew",
-    "showShelf": "Find in store",
-    "showStaff": "Show to staff",
-    "share": "Share and save",
-    "videoCaption": "Subtitles available",
-    "whyChosen": "Why people choose it",
-    "taste": "Taste and aroma",
+  "Story": {
+    "epilogueTitle": "Take the story home.",
+    "epilogueKicker": "むすび",
+    "epilogueBody": "Thank you for reading this far. May the story behind this flavor become one of your travel memories — and if you enjoyed it, tell someone about it.",
+    "share": "Share this story",
+    "online": "Visit the online store",
+    "neighborsTitle": "Stories on the next shelf",
+    "backToMap": "Back to the store map",
     "ingredientsHeading": "Ingredients",
     "allergensHeading": "Allergens",
-    "nutritionHeading": "Nutrition",
-    "relatedRecipes": "Recipes to try"
+    "nutritionHeading": "Nutrition"
   },
-  "Feature": {
-    "selected-ingredients": "Selected ingredients",
-    "no-additives": "No additives",
-    "careful-process": "Careful process",
-    "easy-to-use": "Easy to use",
-    "gift-ready": "Gift ready",
-    "long-life": "Keeps well"
+  "Share": {
+    "title": "Share this story",
+    "close": "Close",
+    "system": "Use device sharing",
+    "mail": "Email",
+    "copyLink": "Copy link",
+    "copied": "Copied",
+    "saveTitle": "Save to favorites",
+    "save": "Add to favorites",
+    "saved": "Saved to favorites"
   },
   "Allergen": {
     "wheat": "Wheat",
@@ -89,85 +59,5 @@
     "fat": "Fat",
     "carbohydrate": "Carbohydrate",
     "salt": "Salt equivalent"
-  },
-  "Recipes": {
-    "title": "Recipes",
-    "lead": "Dishes you can make at home with dashi.",
-    "minutes": "About {count} min",
-    "serves": "Serves {count}",
-    "ingredientsHeading": "Ingredients",
-    "stepsHeading": "Method",
-    "usedProducts": "Products used",
-    "count": "{count} recipes"
-  },
-  "Compare": {
-    "title": "Compare",
-    "lead": "Line up similar products and find the one that suits you.",
-    "empty": "No products selected for comparison.",
-    "emptyAction": "Choose from the product list",
-    "reset": "Reset comparison",
-    "note": "Up to three products can be compared.",
-    "base": "Base",
-    "taste": "Taste",
-    "dishes": "Best for",
-    "usage": "Form",
-    "dietary": "Dietary",
-    "beginner": "For beginners",
-    "gift": "As a gift"
-  },
-  "Staff": {
-    "title": "Show to staff",
-    "shelfIs": "Located in the {area}",
-    "showThis": "Please show this screen to a staff member",
-    "mapLabel": "Floor map",
-    "backToProduct": "Back to the product"
-  },
-  "Survey": {
-    "title": "Survey",
-    "intro": "Please help us with a short survey (about a minute)",
-    "q_understanding": "Did you understand this product?",
-    "q_intent": "Would you like to buy it?",
-    "q_helpful": "Which information helped you most?",
-    "o_well": "Understood well",
-    "o_somewhat": "Somewhat",
-    "o_not-really": "Not really",
-    "o_yes": "Yes",
-    "o_neutral": "Neutral",
-    "o_no": "No",
-    "o_overview": "Overview",
-    "o_usage": "Usage and recipes",
-    "o_materials": "Ingredients",
-    "o_comparison": "Comparison",
-    "o_nutrition": "Nutrition",
-    "o_other": "Other",
-    "submit": "Submit",
-    "thanksTitle": "Thank you",
-    "thanksBody": "Your feedback helps us improve.",
-    "prototypeNote": "This is a prototype. Answers are neither sent nor stored.",
-    "backHome": "Back to the store"
-  },
-  "Share": {
-    "title": "Share this product",
-    "close": "Close",
-    "system": "Use device sharing",
-    "mail": "Email",
-    "copyLink": "Copy link",
-    "copied": "Copied",
-    "saveTitle": "Save to favorites",
-    "save": "Add to favorites",
-    "saved": "Saved to favorites"
-  },
-  "Favorites": {
-    "title": "Favorites",
-    "lead": "Products you saved to look at later.",
-    "empty": "Nothing saved yet.",
-    "emptyAction": "Browse products",
-    "remove": "Remove from favorites"
-  },
-  "Nav": {
-    "home": "Picks",
-    "products": "Products",
-    "recipes": "Recipes",
-    "store": "Store"
   }
 }

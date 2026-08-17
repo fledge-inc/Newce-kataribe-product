@@ -1,78 +1,48 @@
 {
   "Common": {
-    "brand": "가타리베",
+    "brand": "Kataribe",
     "tagline": "만드는 이의 말을, 여행의 언어로.",
     "changeLanguage": "언어 변경",
-    "menu": "메뉴",
     "back": "뒤로",
     "close": "닫기",
-    "viewAll": "모두 보기",
-    "learnMore": "자세히 보기",
     "imageUnavailable": "이미지를 표시할 수 없습니다",
     "photoPending": "사진 준비 중",
-    "loading": "불러오는 중",
-    "noResults": "상품을 찾지 못했습니다",
-    "clearFilters": "필터 지우기"
-  },
-  "Language": {
-    "title": "언어를 선택해 주세요",
-    "subtitle": "Please select your language",
-    "continue": "이 언어로 보기"
-  },
-  "Store": {
-    "recommended": "이달의 추천",
-    "categories": "카테고리로 찾기",
-    "guideTitle": "처음 오신 분께",
-    "guideBody": "다시 고르는 법과 기본 사용법을 안내합니다.",
-    "storeInfo": "매장 정보",
-    "hours": "영업시간",
-    "viewMap": "매장 지도 보기"
+    "loading": "불러오는 중"
   },
   "StoreMap": {
     "title": "매장 지도",
-    "hint": "핀을 눌러 상품을 확인해 보세요",
-    "imageAlt": "가야노야 매장을 위에서 본 지도",
     "productsLabel": "매장 지도 위의 상품",
     "openProduct": "상품 열기",
-    "viewDetails": "상품 상세 보기",
-    "backToMap": "지도로 돌아가기"
+    "cashier": "계산대",
+    "staffRoom": "직원실",
+    "vegetableCorner": "채소\n코너",
+    "seasoningCorner": "조미료\n코너",
+    "giftCorner": "선물\n코너",
+    "stairs": "계단",
+    "entrance": "입구"
   },
-  "Products": {
-    "title": "상품 목록",
-    "searchPlaceholder": "이름・키워드로 검색",
-    "count": "{count}개 상품",
-    "compare": "비교하기",
-    "compareCancel": "선택 취소",
-    "compareHint": "비교할 상품을 2~3개 선택하세요",
-    "compareGo": "{count}개 비교",
-    "compareMax": "최대 3개까지"
-  },
-  "Product": {
-    "recommendedFor": "이런 분께 추천",
-    "features": "특징",
-    "usage": "사용법",
-    "materials": "재료・제법",
-    "comparison": "비교",
-    "details": "상세",
-    "usageTitle": "기본 우리는 법",
-    "showShelf": "매장 위치",
-    "showStaff": "직원에게 보이기",
-    "share": "공유・저장",
-    "videoCaption": "자막을 표시할 수 있습니다",
-    "whyChosen": "왜 선택받는가",
-    "taste": "맛과 향",
+  "Story": {
+    "epilogueTitle": "이 이야기를, 여행의 기억으로.",
+    "epilogueKicker": "むすび",
+    "epilogueBody": "여기까지 읽어 주셔서 감사합니다. 이 맛에 담긴 이야기가 여행의 추억 중 하나가 되기를. 마음에 드셨다면 누군가에게 알려 주세요.",
+    "share": "이 이야기 공유하기",
+    "online": "온라인 스토어 가기",
+    "neighborsTitle": "옆 선반의 이야기",
+    "backToMap": "매장 지도로 돌아가기",
     "ingredientsHeading": "원재료",
-    "allergensHeading": "알레르기",
-    "nutritionHeading": "영양 성분",
-    "relatedRecipes": "추천 레시피"
+    "allergensHeading": "알레르기 물질",
+    "nutritionHeading": "영양 성분"
   },
-  "Feature": {
-    "selected-ingredients": "엄선한 재료",
-    "no-additives": "무첨가",
-    "careful-process": "정성 들인 제법",
-    "easy-to-use": "쓰기 쉬움",
-    "gift-ready": "선물용",
-    "long-life": "오래 사용"
+  "Share": {
+    "title": "이 이야기 공유",
+    "close": "닫기",
+    "system": "기기 공유 기능 사용",
+    "mail": "메일",
+    "copyLink": "링크 복사",
+    "copied": "복사했습니다",
+    "saveTitle": "즐겨찾기에 저장",
+    "save": "즐겨찾기 추가",
+    "saved": "즐겨찾기에 추가됨"
   },
   "Allergen": {
     "wheat": "밀",
@@ -89,85 +59,5 @@
     "fat": "지방",
     "carbohydrate": "탄수화물",
     "salt": "식염 상당량"
-  },
-  "Recipes": {
-    "title": "레시피",
-    "lead": "다시로 집에서 만들 수 있는 요리.",
-    "minutes": "약 {count}분",
-    "serves": "{count}인분",
-    "ingredientsHeading": "재료",
-    "stepsHeading": "만드는 법",
-    "usedProducts": "사용하는 상품",
-    "count": "{count}개 레시피"
-  },
-  "Compare": {
-    "title": "비교",
-    "lead": "비슷한 상품을 나란히 놓고 나에게 맞는 것을 고르세요.",
-    "empty": "비교할 상품이 선택되지 않았습니다.",
-    "emptyAction": "상품 목록에서 고르기",
-    "reset": "비교 초기화",
-    "note": "최대 3개까지 비교할 수 있습니다.",
-    "base": "베이스",
-    "taste": "맛",
-    "dishes": "추천 요리",
-    "usage": "사용 방법",
-    "dietary": "식이 제한",
-    "beginner": "초보자 적합도",
-    "gift": "선물 적합도"
-  },
-  "Staff": {
-    "title": "직원에게 보이기",
-    "shelfIs": "매장은 {area}입니다",
-    "showThis": "이 화면을 직원에게 보여 주세요",
-    "mapLabel": "매장 지도",
-    "backToProduct": "상품 페이지로"
-  },
-  "Survey": {
-    "title": "설문",
-    "intro": "설문에 협조해 주세요 (1분 정도)",
-    "q_understanding": "이 상품에 대해 이해하셨나요?",
-    "q_intent": "구매하고 싶으신가요?",
-    "q_helpful": "가장 참고가 된 정보는 무엇인가요?",
-    "o_well": "잘 이해했다",
-    "o_somewhat": "대체로 이해했다",
-    "o_not-really": "잘 이해하지 못했다",
-    "o_yes": "그렇다",
-    "o_neutral": "보통이다",
-    "o_no": "아니다",
-    "o_overview": "상품 소개",
-    "o_usage": "사용법・레시피",
-    "o_materials": "재료・제법",
-    "o_comparison": "비교",
-    "o_nutrition": "원재료・영양",
-    "o_other": "기타",
-    "submit": "보내기",
-    "thanksTitle": "협조해 주셔서 감사합니다",
-    "thanksBody": "주신 의견은 앞으로의 개선에 활용하겠습니다.",
-    "prototypeNote": "이것은 프로토타입입니다. 응답은 전송·저장되지 않습니다.",
-    "backHome": "매장 홈으로"
-  },
-  "Share": {
-    "title": "이 상품 공유",
-    "close": "닫기",
-    "system": "기기 공유 기능 사용",
-    "mail": "메일",
-    "copyLink": "링크 복사",
-    "copied": "복사했습니다",
-    "saveTitle": "즐겨찾기에 저장",
-    "save": "즐겨찾기 추가",
-    "saved": "즐겨찾기에 추가됨"
-  },
-  "Favorites": {
-    "title": "즐겨찾기",
-    "lead": "나중에 보려고 저장한 상품입니다.",
-    "empty": "아직 저장한 상품이 없습니다.",
-    "emptyAction": "상품 목록 보기",
-    "remove": "즐겨찾기에서 제거"
-  },
-  "Nav": {
-    "home": "추천",
-    "products": "상품",
-    "recipes": "레시피",
-    "store": "매장"
   }
 }

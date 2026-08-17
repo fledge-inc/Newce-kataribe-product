@@ -13,7 +13,13 @@ const config: Config = {
         washi: "var(--washi)",
         rule: "var(--rule)",
         "rule-strong": "var(--rule-strong)",
-        shu: "var(--shu)"
+        shu: "var(--shu)",
+        kogane: "var(--kogane)",
+        "map-ground": "var(--map-ground)",
+        "map-shelf": "var(--map-shelf)",
+        "map-block": "var(--map-block)",
+        "map-line": "var(--map-line)",
+        "map-frame": "var(--map-frame)"
       },
       fontFamily: {
         sans: ["var(--font-noto-sans-jp)", "sans-serif"],
