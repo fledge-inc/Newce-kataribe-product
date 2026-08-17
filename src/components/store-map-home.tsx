@@ -72,8 +72,7 @@ function ProductPin({
 }
 
 export function StoreMapHome({
-  products,
-  locale
+  products
 }: {
   products: MapProduct[];
   locale: string;
@@ -81,13 +80,6 @@ export function StoreMapHome({
   const t = useTranslations("StoreMap");
   const router = useRouter();
   const [selectedId, setSelectedId] = useState<string | null>(null);
-
-  const instruction =
-    locale === "en"
-      ? "Tap a pin to discover its story"
-      : locale === "ja"
-        ? "ピンをタップして、商品の物語へ"
-        : "Tap a pin to discover its story";
 
   return (
     <section
@@ -150,9 +142,6 @@ export function StoreMapHome({
         </div>
       </div>
 
-      <p className="mincho absolute bottom-[8%] left-1/2 -translate-x-1/2 whitespace-nowrap rounded-[4px] border border-kogane/60 bg-kinari/90 px-5 py-3 text-[12px] tracking-[0.05em] text-kogane shadow-[0_5px_20px_rgb(0_0_0_/_0.16)] backdrop-blur-sm">
-        {instruction}
-      </p>
     </section>
   );
 }
