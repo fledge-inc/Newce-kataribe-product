@@ -8,12 +8,12 @@ import {setRequestLocale} from "next-intl/server";
  * 参考画像の 6 ピンの構図に合わせている。
  */
 const pinLayout: {id: string; x: number; y: number}[] = [
-  {id: "product-kayanoya-dashi", x: 23, y: 30},
-  {id: "product-shiro-dashi", x: 48, y: 29},
-  {id: "product-vegetable-dashi", x: 60.5, y: 44},
-  {id: "product-niboshi-dashi", x: 23, y: 61},
-  {id: "product-golden-dashi", x: 48, y: 61},
-  {id: "product-reduced-salt-dashi", x: 48, y: 80.5}
+  {id: "product-kayanoya-dashi", x: 31, y: 30},
+  {id: "product-shiro-dashi", x: 62, y: 30},
+  {id: "product-vegetable-dashi", x: 30, y: 44},
+  {id: "product-niboshi-dashi", x: 65, y: 44},
+  {id: "product-golden-dashi", x: 50, y: 63},
+  {id: "product-reduced-salt-dashi", x: 28, y: 79}
 ];
 
 export default async function MapHomePage({

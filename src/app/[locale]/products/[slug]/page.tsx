@@ -5,6 +5,7 @@ import {
   type StoryFrame,
   type StoryNeighbor
 } from "@/components/product-story";
+import {RichProductStory} from "@/components/rich-product-story";
 import {getProductBySlug, products} from "@/data/content";
 import {getLocalizedText} from "@/lib/localized";
 import {routing} from "@/i18n/routing";
@@ -38,6 +39,14 @@ export default async function ProductStoryPage({
 
   if (!product) {
     notFound();
+  }
+
+  if (locale === "en" && product.slug === "kayanoya-dashi") {
+    return (
+      <main className="min-h-svh bg-kinari">
+        <RichProductStory locale={locale} />
+      </main>
+    );
   }
 
   const tAllergen = await getTranslations("Allergen");

@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "locale": "en",
+  "storyViewport": {
+    "sourceWidth": 887,
+    "sourceHeight": 1774,
+    "intendedCssWidth": 390,
+    "intendedCssHeight": 780,
+    "sharedUiExcluded": [
+      "site header",
+      "page counter",
+      "page progress dots"
+    ]
+  },
+  "brand": {
+    "logo": "/images/kataribe-v2/brand/kataribe-logo-on-kinari.png",
+    "width": 300,
+    "height": 120
+  },
+  "map": {
+    "background": "/images/kataribe-v2/map/store-map-portrait.png",
+    "width": 852,
+    "height": 1846,
+    "pinsAreSharedComponents": true
+  },
+  "pinImages": {
+    "product-kayanoya-dashi": "/images/kataribe-v2/pins/kayanoya-dashi.jpg",
+    "product-shiro-dashi": "/images/kataribe-v2/pins/shiro-dashi.jpg",
+    "product-vegetable-dashi": "/images/kataribe-v2/pins/vegetable-dashi.jpg",
+    "product-niboshi-dashi": "/images/kataribe-v2/pins/niboshi-dashi.jpg",
+    "product-golden-dashi": "/images/kataribe-v2/pins/golden-dashi.jpg",
+    "product-reduced-salt-dashi": "/images/kataribe-v2/pins/reduced-salt-dashi.jpg"
+  },
+  "story": {
+    "product": "product-kayanoya-dashi",
+    "pages": [
+      {
+        "number": 1,
+        "theme": "Product encounter",
+        "image": "/images/kataribe-v2/story/kayanoya-dashi/page-01.png"
+      },
+      {
+        "number": 2,
+        "theme": "Four ingredients",
+        "image": "/images/kataribe-v2/story/kayanoya-dashi/page-02.png"
+      },
+      {
+        "number": 3,
+        "theme": "How to prepare",
+        "image": "/images/kataribe-v2/story/kayanoya-dashi/page-03.png"
+      },
+      {
+        "number": 4,
+        "theme": "Everyday dishes",
+        "image": "/images/kataribe-v2/story/kayanoya-dashi/page-04.png"
+      },
+      {
+        "number": 5,
+        "theme": "Product details",
+        "image": "/images/kataribe-v2/story/kayanoya-dashi/page-05.png"
+      },
+      {
+        "number": 6,
+        "theme": "Related products, review, save and social sharing",
+        "image": "/images/kataribe-v2/story/kayanoya-dashi/page-06.png",
+        "interactiveOverlayRequired": true,
+        "overlayTargets": [
+          "Vegetable Dashi",
+          "Reduced Salt Dashi",
+          "Niboshi Dashi",
+          "Save",
+          "Instagram",
+          "LINE",
+          "Copy link"
+        ]
+      }
+    ]
+  }
+}

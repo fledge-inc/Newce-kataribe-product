@@ -31,7 +31,7 @@ function GlobeGlyph({size = 15}: {size?: number}) {
  * 「🌐 日本語 ▼」を押すとその場でドロップダウンが開き、
  * 現在のページのまま locale だけ差し替える。
  */
-function LanguagePill() {
+export function LanguagePill() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
