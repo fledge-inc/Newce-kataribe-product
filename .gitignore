@@ -6,3 +6,5 @@ test-results
 tmp
 *.tsbuildinfo
 
+.vercel
+.env*
