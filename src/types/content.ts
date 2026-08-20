@@ -1,8 +1,14 @@
-export const locales = ["ja", "en", "zh-CN", "zh-TW", "ko"] as const;
+export const locales = ["ja", "en", "zh-CN", "zh-TW", "ko", "ne"] as const;
 
 export type Locale = (typeof locales)[number];
 
-export type LocalizedText = Record<Locale, string>;
+/**
+ * コンテンツ本文は ja/en/zh-CN/zh-TW/ko の5言語分のみ持つ（詳細は
+ * data/section-templates.ts のコメント参照）。ネパール語のように本文の
+ * 翻訳をまだ持たないロケールは en を必須フォールバックとして使うため、
+ * en 以外は任意キーにしておく。
+ */
+export type LocalizedText = Partial<Record<Locale, string>> & {en: string};
 
 export type ProductCategoryId = "all" | "dashi" | "seasoning" | "gift" | "other";
 

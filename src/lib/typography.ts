@@ -27,5 +27,6 @@ export const latinLabel: Record<Locale, string> = {
   en: "ENGLISH",
   "zh-CN": "CHINESE / SIMPLIFIED",
   "zh-TW": "CHINESE / TRADITIONAL",
-  ko: "KOREAN"
+  ko: "KOREAN",
+  ne: "NEPALI"
 };

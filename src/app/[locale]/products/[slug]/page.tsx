@@ -54,13 +54,16 @@ export default async function ProductStoryPage({
 
   /** 見出しに添える金色の別言語表記。日本語では英語を、他言語では日本語を出す */
   const kickerOf = (textObj: LocalizedText) =>
-    locale === "ja" ? textObj.en : textObj.ja;
+    locale === "ja" ? textObj.en : getLocalizedText(textObj, "ja");
 
   const frames: StoryFrame[] = [
     {
       id: "intro",
       title: getLocalizedText(product.name, locale),
-      kicker: locale === "ja" ? product.romanizedName : product.name.ja,
+      kicker:
+        locale === "ja"
+          ? product.romanizedName
+          : getLocalizedText(product.name, "ja"),
       lead: getLocalizedText(product.shortDescription, locale),
       body: getLocalizedText(product.summary, locale),
       image: product.image,
