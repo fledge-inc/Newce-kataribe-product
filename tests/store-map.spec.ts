@@ -11,8 +11,8 @@ test("a map pin opens the product story directly", async ({page}) => {
 
   // カードを挟まず、ものがたり画面へ直接遷移する
   await expect(page).toHaveURL(/\/en\/products\/kayanoya-dashi$/);
-  await expect(page.locator('[aria-live="polite"]')).toHaveText(
-    /01\s*\/\s*07/
+  await expect(page.locator('div[aria-live="polite"]')).toHaveText(
+    /01\s*\/\s*06/
   );
 });
 
@@ -26,6 +26,18 @@ test("switches language from the header pill", async ({page}) => {
   await expect(
     page.getByRole("button", {name: "Open product: Kayanoya Dashi"})
   ).toBeVisible();
+});
+
+test("offers French and keeps the selected locale", async ({page}) => {
+  await page.goto("/ja");
+
+  await page.getByRole("button", {name: "言語を変更"}).click();
+  await expect(page.getByRole("option", {name: /Français/})).toBeVisible();
+  await page.getByRole("option", {name: /Français/}).click();
+
+  await expect(page).toHaveURL(/\/fr$/);
+  await page.getByRole("button", {name: /Open product|Ouvrir le produit/}).first().click();
+  await expect(page).toHaveURL(/\/fr\/products\/kayanoya-dashi$/);
 });
 
 test("story counter follows the scroll position", async ({page}) => {

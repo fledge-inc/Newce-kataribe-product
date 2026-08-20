@@ -1,8 +1,9 @@
-export const locales = ["ja", "en", "zh-CN", "zh-TW", "ko"] as const;
+export const locales = ["ja", "en", "zh-CN", "zh-TW", "ko", "fr"] as const;
 
 export type Locale = (typeof locales)[number];
 
-export type LocalizedText = Record<Locale, string>;
+export type LocalizedText = Record<"ja" | "en", string> &
+  Partial<Record<Locale, string>>;
 
 export type ProductCategoryId = "all" | "dashi" | "seasoning" | "gift" | "other";
 

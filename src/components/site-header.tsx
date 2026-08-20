@@ -11,7 +11,8 @@ const languageOptions: {locale: Locale; label: string; short: string}[] = [
   {locale: "en", label: "English", short: "EN"},
   {locale: "zh-CN", label: "简体中文", short: "CN"},
   {locale: "zh-TW", label: "繁體中文", short: "TW"},
-  {locale: "ko", label: "한국어", short: "KO"}
+  {locale: "ko", label: "한국어", short: "KO"},
+  {locale: "fr", label: "Français", short: "FR"}
 ];
 
 function GlobeGlyph({size = 15}: {size?: number}) {

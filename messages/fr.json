@@ -1,0 +1,63 @@
+{
+  "Common": {
+    "brand": "Kataribe",
+    "tagline": "Les mots du fabricant, dans la langue de votre voyage.",
+    "changeLanguage": "Changer de langue",
+    "back": "Retour",
+    "close": "Fermer",
+    "imageUnavailable": "Image indisponible",
+    "photoPending": "Photo à venir",
+    "loading": "Chargement"
+  },
+  "StoreMap": {
+    "title": "Plan du magasin",
+    "productsLabel": "Produits sur le plan du magasin",
+    "openProduct": "Ouvrir le produit",
+    "cashier": "Caisse",
+    "staffRoom": "Salle du personnel",
+    "vegetableCorner": "Rayon\nlégumes",
+    "seasoningCorner": "Rayon\nassaisonnements",
+    "giftCorner": "Rayon\ncadeaux",
+    "stairs": "Escalier",
+    "entrance": "Entrée"
+  },
+  "Story": {
+    "epilogueTitle": "Emportez cette histoire avec vous.",
+    "epilogueKicker": "むすび",
+    "epilogueBody": "Merci d'avoir lu jusqu'ici. Que l'histoire de cette saveur devienne l'un de vos souvenirs de voyage — et si elle vous a plu, partagez-la.",
+    "share": "Partager cette histoire",
+    "online": "Visiter la boutique en ligne",
+    "neighborsTitle": "Histoires de l'étagère voisine",
+    "backToMap": "Retour au plan du magasin",
+    "ingredientsHeading": "Ingrédients",
+    "allergensHeading": "Allergènes",
+    "nutritionHeading": "Valeurs nutritionnelles"
+  },
+  "Share": {
+    "title": "Partager cette histoire",
+    "close": "Fermer",
+    "system": "Utiliser le partage de l'appareil",
+    "mail": "E-mail",
+    "copyLink": "Copier le lien",
+    "copied": "Lien copié",
+    "saveTitle": "Enregistrer dans les favoris",
+    "save": "Ajouter aux favoris",
+    "saved": "Ajouté aux favoris"
+  },
+  "Allergen": {
+    "wheat": "Blé",
+    "soy": "Soja",
+    "milk": "Lait",
+    "egg": "Œuf",
+    "shrimp": "Crevette",
+    "mackerel": "Maquereau",
+    "none": "Aucun allergène majeur"
+  },
+  "Nutrition": {
+    "energy": "Énergie",
+    "protein": "Protéines",
+    "fat": "Matières grasses",
+    "carbohydrate": "Glucides",
+    "salt": "Équivalent en sel"
+  }
+}

@@ -4,7 +4,7 @@ const minchoBodyLocales = new Set<string>(["ja", "zh-CN", "zh-TW"]);
 const verticalLocales = new Set<string>(["ja", "zh-CN", "zh-TW"]);
 
 /**
- * 本文まで明朝で組むロケール。英語・韓国語は小さい字の可読性を優先して
+ * 本文まで明朝で組むロケール。ラテン文字・韓国語は小さい字の可読性を優先して
  * ゴシックのままにする（見出しは全ロケール明朝）。
  */
 export function isMinchoBodyLocale(locale: string): boolean {
@@ -27,5 +27,6 @@ export const latinLabel: Record<Locale, string> = {
   en: "ENGLISH",
   "zh-CN": "CHINESE / SIMPLIFIED",
   "zh-TW": "CHINESE / TRADITIONAL",
-  ko: "KOREAN"
+  ko: "KOREAN",
+  fr: "FRENCH"
 };
