@@ -53,6 +53,9 @@ jobs:
         run: echo "url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> "$GITHUB_OUTPUT"
       - name: Comment preview URL
         continue-on-error: true
-        run: gh pr comment ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --edit-last --create-if-none --body "🔍 Vercel Preview: ${{ steps.deploy.outputs.url }}"
+        run: >-
+          gh pr comment ${{ github.event.pull_request.number }}
+          --repo ${{ github.repository }} --edit-last --create-if-none
+          --body "🔍 Vercel Preview: ${{ steps.deploy.outputs.url }}"
         env:
           GH_TOKEN: ${{ github.token }}
