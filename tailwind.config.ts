@@ -22,7 +22,7 @@ const config: Config = {
         "map-frame": "var(--map-frame)"
       },
       fontFamily: {
-        sans: ["var(--font-noto-sans-jp)", "sans-serif"],
+        sans: ["var(--sans)"],
         mincho: ["var(--mincho)"]
       },
       letterSpacing: {
