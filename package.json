@@ -2,8 +2,13 @@
   "name": "kataribe",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20 <25",
+    "npm": ">=10"
+  },
   "scripts": {
-    "dev": "next dev",
+    "dev": "bash scripts/dev-local.sh",
+    "dev:app": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
