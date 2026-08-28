@@ -24,6 +24,30 @@ jobs:
           node-version: 20
       - name: Install Vercel CLI
         run: npm install -g vercel@59.1.4
+      - name: Cancel this task's stalled deployments
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          for stalled_sha in \
+            3579667b8ac7a849baae62c7eb3d813724975f6d \
+            878f00aa9f50fefdaea332bb5d64bd1351ecb9f1 \
+            0479ab1b8e290bcf38abfe557e2d1e943acb430c \
+            906fe409c626d0e66ced1f0296b7ea65e7e68047
+          do
+            deployment_ids=$(curl --fail --silent --show-error \
+              --header "Authorization: Bearer ${VERCEL_TOKEN}" \
+              "https://api.vercel.com/v6/deployments?teamId=${VERCEL_ORG_ID}&projectId=${VERCEL_PROJECT_ID}&sha=${stalled_sha}&state=BUILDING,INITIALIZING,QUEUED&limit=10" \
+              | jq -r '.deployments[]?.uid')
+
+            while IFS= read -r deployment_id; do
+              [[ -z "${deployment_id}" ]] && continue
+              echo "Canceling stalled deployment ${deployment_id} for ${stalled_sha}"
+              curl --fail --silent --show-error \
+                --request PATCH \
+                --header "Authorization: Bearer ${VERCEL_TOKEN}" \
+                "https://api.vercel.com/v12/deployments/${deployment_id}/cancel?teamId=${VERCEL_ORG_ID}"
+            done <<< "${deployment_ids}"
+          done
       - name: Pull Vercel environment
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
       - name: Build
