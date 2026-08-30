@@ -7,9 +7,10 @@ import {
 } from "@/components/product-story";
 import {RichProductStory} from "@/components/rich-product-story";
 import {getProductBySlug, products} from "@/data/content";
+import {buildRichProductStory, richStoryProductSlugs} from "@/data/rich-story";
 import {getLocalizedText} from "@/lib/localized";
 import {routing} from "@/i18n/routing";
-import type {LocalizedText} from "@/types/content";
+import type {Locale, LocalizedText} from "@/types/content";
 import {getTranslations, setRequestLocale} from "next-intl/server";
 
 export function generateStaticParams() {
@@ -41,10 +42,11 @@ export default async function ProductStoryPage({
     notFound();
   }
 
-  if (locale === "en" && product.slug === "kayanoya-dashi") {
+  if (richStoryProductSlugs.has(product.slug)) {
+    const story = buildRichProductStory(product, products, locale as Locale);
     return (
       <main className="min-h-svh bg-kinari">
-        <RichProductStory locale={locale} />
+        <RichProductStory locale={locale} story={story} />
       </main>
     );
   }

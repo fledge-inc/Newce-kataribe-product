@@ -72,7 +72,8 @@ function ProductPin({
 }
 
 export function StoreMapHome({
-  products
+  products,
+  locale
 }: {
   products: MapProduct[];
   locale: string;
@@ -115,7 +116,7 @@ export function StoreMapHome({
                 onClick={() => {
                   // ピンを朱に灯してから、ものがたり画面へ遷移する
                   setSelectedId(product.id);
-                  router.push("/products/kayanoya-dashi", {locale: "en"});
+                  router.push(`/products/${product.slug}`, {locale});
                 }}
                 className={`absolute flex flex-col items-center ${
                   active ? "z-20" : "z-10"

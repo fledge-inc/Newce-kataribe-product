@@ -717,7 +717,7 @@ export const products: Product[] = [
     id: "product-golden-dashi",
     slug: "golden-dashi",
     category: "dashi",
-    image: "/images/products/kayanoya-dashi.jpg",
+    image: "/images/products/golden-dashi.jpg",
     imageAlt: text(
       "黄金比のだしの商品パッケージ",
       "A pouch of Golden Ratio Dashi",
@@ -813,7 +813,7 @@ export const products: Product[] = [
     id: "product-shiro-dashi",
     slug: "shiro-dashi",
     category: "seasoning",
-    image: "/images/ingredients/dashi-ingredients.jpg",
+    image: "/images/products/shiro-dashi.jpg",
     imageAlt: text(
       "白だしの商品",
       "A bottle of Shiro Dashi",
