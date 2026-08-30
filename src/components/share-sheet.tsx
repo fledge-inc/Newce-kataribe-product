@@ -150,7 +150,7 @@ export function ShareSheet({
               >
                 {t("copyLink")}
                 {copied && (
-                  <span className="text-[10px] tracking-jp text-shu">
+                  <span className="text-[11px] tracking-jp text-shu">
                     {t("copied")}
                   </span>
                 )}

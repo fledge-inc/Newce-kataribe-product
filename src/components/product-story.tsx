@@ -194,7 +194,7 @@ export function ProductStory({
                     {details.allergens.map((allergen) => (
                       <span
                         key={allergen}
-                        className="mincho border border-rule-strong px-2.5 py-1 text-[10px] tracking-jp text-ink-soft"
+                        className="mincho border border-rule-strong px-2.5 py-1 text-[11px] tracking-jp text-ink-soft"
                       >
                         {allergen}
                       </span>
@@ -205,7 +205,7 @@ export function ProductStory({
                     <SealDot />
                     {t("nutritionHeading")}
                   </h3>
-                  <p className="mt-2 text-[10px] tracking-jp-tight text-muted">
+                  <p className="mt-2 text-[11px] tracking-jp-tight text-muted">
                     {details.basis}
                   </p>
                   <dl className="mt-3 border-t border-rule">

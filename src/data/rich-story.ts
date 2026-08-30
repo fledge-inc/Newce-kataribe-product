@@ -80,49 +80,49 @@ const productContents: Record<string, string> = {
 
 const ui = {
   ja: {
-    ingredients: "素材と仕立て", usage: "基本の使い方", table: "毎日の食卓へ", details: "商品詳細",
-    discover: "次のだしを見つける", discoverBody: "好みの素材や、毎日の料理に合うだしをお選びください。",
-    scroll: "スクロールして読む ↓", another: "もうひとつの使い方", contents: "内容量", allergens: "アレルゲン",
+    ingredients: "素材と仕立て", usage: "基本の使い方", table: "料理との合わせ方", details: "商品詳細",
+    discover: "商品をオンラインで見る", discoverBody: "素材や味わいの違いを比べて、毎日の料理に合うだしをお選びください。",
+    scroll: "スクロールして読む ↓", another: "味わい", contents: "内容量", allergens: "アレルゲン",
     storage: "保存方法", storageText: "多湿・直射日光を避けて常温で保存してください。", nutrition: "栄養成分",
     map: "マップ", page: "ストーリーページ", pages: "ストーリーページ一覧", instagram: "Instagramで共有",
     x: "Xで共有", whatsapp: "WhatsAppで共有", google: "Googleマップで茅乃舎の口コミを見る"
   },
   en: {
-    ingredients: "INGREDIENTS & CRAFT", usage: "HOW TO PREPARE", table: "EVERYDAY COOKING", details: "PRODUCT DETAILS",
-    discover: "Find your next dashi.", discoverBody: "Choose a stock that fits the ingredients you love and the food you cook every day.",
-    scroll: "SCROLL TO DISCOVER ↓", another: "ANOTHER WAY TO USE IT", contents: "CONTENTS", allergens: "ALLERGENS",
+    ingredients: "INGREDIENTS & CRAFT", usage: "HOW TO PREPARE", table: "PAIRING & FLAVOR", details: "PRODUCT DETAILS",
+    discover: "Shop the dashi collection", discoverBody: "Compare the ingredients and flavor of each stock, then choose one for the dishes you cook most.",
+    scroll: "SCROLL TO READ ↓", another: "FLAVOR PROFILE", contents: "CONTENTS", allergens: "ALLERGENS",
     storage: "STORAGE", storageText: "Keep away from humidity and direct sunlight.", nutrition: "NUTRITION",
     map: "MAP", page: "Story page", pages: "Story pages", instagram: "Share on Instagram",
     x: "Share on X", whatsapp: "Share on WhatsApp", google: "View Kayanoya reviews on Google Maps"
   },
   "zh-CN": {
-    ingredients: "食材与工艺", usage: "基本用法", table: "融入每日料理", details: "商品详情",
-    discover: "寻找下一款高汤", discoverBody: "根据喜爱的食材与日常料理，选择适合您的高汤。",
-    scroll: "向下滚动阅读 ↓", another: "另一种用法", contents: "内容量", allergens: "过敏原",
+    ingredients: "食材与工艺", usage: "基本用法", table: "搭配与风味", details: "商品详情",
+    discover: "在线选购高汤", discoverBody: "比较每款高汤的食材与风味，选择适合日常料理的一款。",
+    scroll: "向下滚动阅读 ↓", another: "风味特点", contents: "内容量", allergens: "过敏原",
     storage: "保存方法", storageText: "请避开潮湿与阳光直射，常温保存。", nutrition: "营养成分",
     map: "地图", page: "故事页面", pages: "故事页面导航", instagram: "分享到Instagram",
     x: "分享到X", whatsapp: "分享到WhatsApp", google: "在Google地图查看茅乃舎评价"
   },
   "zh-TW": {
-    ingredients: "食材與工藝", usage: "基本用法", table: "融入每日料理", details: "商品詳情",
-    discover: "尋找下一款高湯", discoverBody: "依照喜愛的食材與日常料理，選擇適合您的高湯。",
-    scroll: "向下捲動閱讀 ↓", another: "另一種用法", contents: "內容量", allergens: "過敏原",
+    ingredients: "食材與工藝", usage: "基本用法", table: "搭配與風味", details: "商品詳情",
+    discover: "線上選購高湯", discoverBody: "比較每款高湯的食材與風味，選擇適合日常料理的一款。",
+    scroll: "向下捲動閱讀 ↓", another: "風味特點", contents: "內容量", allergens: "過敏原",
     storage: "保存方法", storageText: "請避開潮濕與陽光直射，常溫保存。", nutrition: "營養成分",
     map: "地圖", page: "故事頁面", pages: "故事頁面導覽", instagram: "分享到Instagram",
     x: "分享到X", whatsapp: "分享到WhatsApp", google: "在Google地圖查看茅乃舍評價"
   },
   ko: {
-    ingredients: "재료와 제조법", usage: "기본 사용법", table: "매일의 식탁", details: "상품 정보",
-    discover: "다음 다시를 찾아보세요", discoverBody: "좋아하는 재료와 매일 만드는 요리에 어울리는 다시를 골라 보세요.",
-    scroll: "아래로 스크롤해 보기 ↓", another: "또 다른 사용법", contents: "내용량", allergens: "알레르기",
+    ingredients: "재료와 제조법", usage: "기본 사용법", table: "요리와 풍미", details: "상품 정보",
+    discover: "온라인에서 다시 고르기", discoverBody: "각 다시의 재료와 풍미를 비교하고 자주 만드는 요리에 맞는 제품을 골라 보세요.",
+    scroll: "아래로 스크롤해 읽기 ↓", another: "풍미", contents: "내용량", allergens: "알레르기",
     storage: "보관 방법", storageText: "습기와 직사광선을 피해 실온에 보관하세요.", nutrition: "영양 성분",
     map: "지도", page: "스토리 페이지", pages: "스토리 페이지 목록", instagram: "Instagram에 공유",
     x: "X에 공유", whatsapp: "WhatsApp에 공유", google: "Google 지도에서 가야노야 리뷰 보기"
   },
   ne: {
-    ingredients: "सामग्री र निर्माण", usage: "प्रयोग गर्ने तरिका", table: "दैनिक भोजनका लागि", details: "उत्पादन विवरण",
-    discover: "आफ्नो अर्को दाशी छान्नुहोस्", discoverBody: "मनपर्ने सामग्री र दैनिक परिकारसँग मिल्ने दाशी रोज्नुहोस्।",
-    scroll: "तल स्क्रोल गरेर हेर्नुहोस् ↓", another: "प्रयोग गर्ने अर्को तरिका", contents: "परिमाण", allergens: "एलर्जी तत्व",
+    ingredients: "सामग्री र निर्माण", usage: "प्रयोग गर्ने तरिका", table: "परिकार र स्वाद", details: "उत्पादन विवरण",
+    discover: "दाशी अनलाइन किन्नुहोस्", discoverBody: "हरेक दाशीको सामग्री र स्वाद तुलना गरी आफ्नो दैनिक परिकारका लागि उपयुक्त उत्पादन छान्नुहोस्।",
+    scroll: "तल स्क्रोल गरेर पढ्नुहोस् ↓", another: "स्वाद", contents: "परिमाण", allergens: "एलर्जी तत्व",
     storage: "भण्डारण", storageText: "चिस्यान र प्रत्यक्ष घामबाट टाढा सामान्य तापक्रममा राख्नुहोस्।", nutrition: "पोषण विवरण",
     map: "नक्सा", page: "कथा पृष्ठ", pages: "कथा पृष्ठहरू", instagram: "Instagram मा साझा गर्नुहोस्",
     x: "X मा साझा गर्नुहोस्", whatsapp: "WhatsApp मा साझा गर्नुहोस्", google: "Google Maps मा Kayanoya समीक्षा हेर्नुहोस्"
@@ -250,8 +250,10 @@ export function buildRichProductStory(product: Product, allProducts: Product[], 
       {
         image: editorialImage, alt: copy.name, position: "center",
         kicker: labels.ingredients,
-        title: locale === "ne" ? labels.ingredients : getLocalizedText(featureSection?.title ?? product.name, locale),
-        body: locale === "ne" ? copy.summary : getLocalizedText(featureSection?.body ?? product.summary, locale),
+        title: labels.ingredients,
+        body: locale === "ne"
+          ? `${copy.summary} ${copy.ingredients}`
+          : `${getLocalizedText(featureSection?.body ?? product.summary, locale)} ${copy.summary}`,
         chips: copy.tags
       },
       {
@@ -261,8 +263,8 @@ export function buildRichProductStory(product: Product, allProducts: Product[], 
       },
       {
         image: editorialImage, alt: copy.name, position: "center 66%",
-        kicker: labels.table, title: copy.recommendation, body: copy.taste,
-        note: {label: labels.another, text: copy.summary}
+        kicker: labels.table, title: labels.table, body: copy.recommendation,
+        note: {label: labels.another, text: copy.taste}
       },
       {
         image: heroImage, alt: copy.name, position: "center 52%", kicker: labels.details, title: labels.details, body: ""

@@ -488,12 +488,22 @@ a:focus-visible {
 
 /* Rich product story — photography and editorial copy are separate surfaces. */
 .rich-story-shell {
+  --story-display: var(--mincho);
   position: relative;
   height: 100svh;
   overflow: hidden;
   background: #1c1c1b;
   color: #25221d;
   font-family: var(--sans);
+}
+
+.rich-story-shell[data-locale="en"] {
+  --story-display: Didot, "Bodoni 72", Baskerville, "Times New Roman", serif;
+}
+
+.rich-story-shell[data-locale="ne"] {
+  --story-display: "Noto Serif Devanagari", "Kohinoor Devanagari",
+    "Devanagari Sangam MN", var(--sans);
 }
 
 .story-rail {
@@ -546,15 +556,23 @@ a:focus-visible {
   flex-direction: column;
   min-height: 0;
   padding: 34px 32px 26px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
   background: linear-gradient(rgb(250 248 243 / 0.98), rgb(246 242 234));
   font-family: var(--sans);
+}
+
+.story-panel::-webkit-scrollbar {
+  display: none;
 }
 
 .story-page-1 .story-panel {
   order: -1;
   flex: 0 0 44%;
-  padding-top: 60px;
+  /* Reserve the top-right lane for the transparent page counter. */
+  padding-top: 84px;
 }
 
 .story-page-1 .story-visual {
@@ -571,7 +589,7 @@ a:focus-visible {
 }
 
 .story-page-6 .story-visual {
-  flex-basis: 26%;
+  flex-basis: 22%;
 }
 
 .story-reveal {
@@ -594,26 +612,29 @@ a:focus-visible {
   position: static;
   color: #8b6a27;
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.24em;
   line-height: 1.4;
 }
 
 .story-heading {
+  max-width: 100%;
   margin: 14px 0 0;
   color: #24211d;
-  font-family: Didot, "Bodoni 72", Baskerville, "Times New Roman", serif;
-  font-size: clamp(46px, 13vw, 58px);
+  font-family: var(--story-display);
+  font-size: clamp(36px, 10.6vw, 48px);
   font-weight: 400;
-  letter-spacing: -0.035em;
-  line-height: 0.93;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .story-heading-sm {
   margin-top: 13px;
-  font-size: clamp(34px, 9.8vw, 44px);
-  line-height: 1.02;
+  font-size: clamp(30px, 8.4vw, 38px);
+  line-height: 1.08;
 }
 
 .story-rule {
@@ -630,7 +651,7 @@ a:focus-visible {
 
 .story-lead {
   margin: 0;
-  font-family: Didot, "Bodoni 72", Baskerville, "Times New Roman", serif;
+  font-family: var(--story-display);
   font-size: 21px;
   line-height: 1.25;
 }
@@ -640,21 +661,22 @@ a:focus-visible {
   margin: 0;
   color: #514c44;
   font-family: var(--sans);
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.72;
+  overflow-wrap: anywhere;
 }
 
 .story-page-1 .story-body {
   max-width: 315px;
-  font-size: 13px;
-  line-height: 1.65;
+  font-size: 14px;
+  line-height: 1.68;
 }
 
 .story-scroll-cue {
   position: static;
   margin-top: auto;
   color: #777066;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.2em;
 }
 
@@ -677,8 +699,10 @@ a:focus-visible {
   border-right: 1px solid #d7d0c3;
   border-bottom: 1px solid #d7d0c3;
   color: #69552e;
-  font-size: 8.5px;
-  letter-spacing: 0.12em;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .story-steps {
@@ -694,8 +718,8 @@ a:focus-visible {
   min-height: 58px;
   border-bottom: 1px solid #d8d1c4;
   color: #514c44;
-  font-size: 12.5px;
-  line-height: 1.45;
+  font-size: 13.5px;
+  line-height: 1.5;
 }
 
 .story-steps b {
@@ -716,15 +740,15 @@ a:focus-visible {
 
 .story-use-note b {
   color: #8b6a27;
-  font-size: 8.5px;
+  font-size: 10px;
   letter-spacing: 0.13em;
   line-height: 1.55;
 }
 
 .story-use-note span {
   color: #514c44;
-  font-size: 11.5px;
-  line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .story-page-5 .story-panel {
@@ -733,7 +757,7 @@ a:focus-visible {
 }
 
 .story-page-5 .story-heading-sm {
-  font-size: 34px;
+  font-size: 31px;
 }
 
 .story-page-5 .story-rule {
@@ -752,8 +776,9 @@ a:focus-visible {
   border-right: 1px solid #d8d1c4;
   border-bottom: 1px solid #d8d1c4;
   color: #4f4a43;
-  font-size: 10.5px;
-  line-height: 1.35;
+  font-size: 11.5px;
+  line-height: 1.42;
+  overflow-wrap: anywhere;
 }
 
 .story-spec-grid span:last-child {
@@ -765,7 +790,7 @@ a:focus-visible {
   display: block;
   margin-bottom: 3px;
   color: #8b6a27;
-  font-size: 8px;
+  font-size: 9.5px;
   letter-spacing: 0.14em;
 }
 
@@ -789,7 +814,7 @@ a:focus-visible {
   padding: 5px 7px;
   border-right: 1px solid #d8d1c4;
   border-bottom: 1px solid #d8d1c4;
-  font-size: 9.5px;
+  font-size: 10.5px;
 }
 
 .story-nutrition dt,
@@ -801,8 +826,9 @@ a:focus-visible {
   position: static;
   margin: 10px 0 0;
   color: #665f55;
-  font-size: 9px;
-  line-height: 1.45;
+  font-size: 10.5px;
+  line-height: 1.52;
+  overflow-wrap: anywhere;
 }
 
 .story-page-6 .story-panel {
@@ -811,7 +837,7 @@ a:focus-visible {
 }
 
 .story-page-6 .story-heading-sm {
-  font-size: 35px;
+  font-size: 31px;
 }
 
 .story-page-6 .story-rule {
@@ -819,8 +845,8 @@ a:focus-visible {
 }
 
 .story-page-6 .story-body {
-  font-size: 12px;
-  line-height: 1.55;
+  font-size: 13.5px;
+  line-height: 1.6;
 }
 
 .story-related-grid {
@@ -834,9 +860,9 @@ a:focus-visible {
   display: block;
   min-width: 0;
   color: #2e2a25;
-  font-family: Didot, "Times New Roman", serif;
-  font-size: 10.5px;
-  line-height: 1.15;
+  font-family: var(--story-display);
+  font-size: 11.5px;
+  line-height: 1.28;
   text-decoration: none;
 }
 
@@ -901,8 +927,8 @@ a:focus-visible {
 }
 
 .story-actions span {
-  font-size: 7px;
-  letter-spacing: 0.1em;
+  font-size: 9px;
+  letter-spacing: 0.06em;
 }
 
 .story-map-link,
@@ -920,7 +946,7 @@ a:focus-visible {
   top: 16px;
   left: 16px;
   padding: 9px 12px;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.18em;
   text-decoration: none;
 }
@@ -955,7 +981,57 @@ a:focus-visible {
 }
 
 .story-counter small {
-  font-size: 10px;
+  font-size: 11px;
+}
+
+.rich-story-shell[data-locale="ja"] .story-heading,
+.rich-story-shell[data-locale^="zh"] .story-heading,
+.rich-story-shell[data-locale="ko"] .story-heading {
+  letter-spacing: 0.01em;
+  line-height: 1.14;
+}
+
+.rich-story-shell[data-locale="ne"] .story-heading {
+  font-size: clamp(30px, 8.5vw, 38px);
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@media (max-width: 370px), (max-height: 680px) {
+  .story-panel {
+    padding: 26px 24px 20px;
+  }
+
+  .story-page-1 .story-panel {
+    padding-top: 84px;
+  }
+
+  .story-heading {
+    font-size: 34px;
+  }
+
+  .story-heading-sm,
+  .story-page-5 .story-heading-sm,
+  .story-page-6 .story-heading-sm {
+    font-size: 28px;
+  }
+
+  .rich-story-shell[data-locale="ne"] .story-heading {
+    font-size: 28px;
+  }
+
+  .story-rule {
+    margin-block: 14px 13px;
+  }
+
+  .story-body {
+    font-size: 13.5px;
+  }
+
+  .story-chip-grid,
+  .story-use-note {
+    margin-top: 14px;
+  }
 }
 
 .story-pagination {

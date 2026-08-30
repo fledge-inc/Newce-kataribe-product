@@ -108,7 +108,7 @@ export function LanguagePill() {
                       {option.label}
                     </span>
                   </span>
-                  <span className="text-[8px] uppercase tracking-latin text-muted">
+                  <span className="text-[10px] uppercase tracking-[0.16em] text-muted">
                     {option.short}
                   </span>
                 </button>
@@ -135,7 +135,7 @@ export function SiteHeader() {
           <span className="fude block text-[26px] leading-none text-kogane">
             かたりべ
           </span>
-          <span className="mincho mt-1 block text-[8px] uppercase tracking-[0.42em] text-kogane/80">
+          <span className="mincho mt-1 block text-[10px] uppercase tracking-[0.32em] text-kogane/80">
             Kataribe
           </span>
         </Link>

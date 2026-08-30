@@ -175,7 +175,7 @@ export function RichProductStory({locale, story}: {locale: string; story: RichPr
   };
 
   return (
-    <div className="rich-story-shell">
+    <div className="rich-story-shell" data-locale={locale} lang={locale}>
       <div ref={railRef} className="story-rail hide-scrollbar">
         {pages.map((page, index) => {
           const pageNumber = index + 1;
