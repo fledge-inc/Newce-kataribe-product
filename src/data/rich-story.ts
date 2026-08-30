@@ -81,7 +81,7 @@ const productContents: Record<string, string> = {
 const ui = {
   ja: {
     ingredients: "素材と仕立て", usage: "基本の使い方", table: "料理との合わせ方", details: "商品詳細",
-    discover: "商品をオンラインで見る", discoverBody: "素材や味わいの違いを比べて、毎日の料理に合うだしをお選びください。",
+    discover: "商品をオンラインで見る", discoverBody: "商品を選ぶと、茅乃舎オンラインショップの商品ページが開きます。",
     scroll: "スクロールして読む ↓", another: "味わい", contents: "内容量", allergens: "アレルゲン",
     storage: "保存方法", storageText: "多湿・直射日光を避けて常温で保存してください。", nutrition: "栄養成分",
     map: "マップ", page: "ストーリーページ", pages: "ストーリーページ一覧", instagram: "Instagramで共有",
@@ -89,7 +89,7 @@ const ui = {
   },
   en: {
     ingredients: "INGREDIENTS & CRAFT", usage: "HOW TO PREPARE", table: "PAIRING & FLAVOR", details: "PRODUCT DETAILS",
-    discover: "Shop the dashi collection", discoverBody: "Compare the ingredients and flavor of each stock, then choose one for the dishes you cook most.",
+    discover: "Shop the dashi collection", discoverBody: "Select a product to open its page on the Kayanoya online shop.",
     scroll: "SCROLL TO READ ↓", another: "FLAVOR PROFILE", contents: "CONTENTS", allergens: "ALLERGENS",
     storage: "STORAGE", storageText: "Keep away from humidity and direct sunlight.", nutrition: "NUTRITION",
     map: "MAP", page: "Story page", pages: "Story pages", instagram: "Share on Instagram",
@@ -97,7 +97,7 @@ const ui = {
   },
   "zh-CN": {
     ingredients: "食材与工艺", usage: "基本用法", table: "搭配与风味", details: "商品详情",
-    discover: "在线选购高汤", discoverBody: "比较每款高汤的食材与风味，选择适合日常料理的一款。",
+    discover: "在线选购高汤", discoverBody: "选择商品后，将打开茅乃舎在线商店的商品页面。",
     scroll: "向下滚动阅读 ↓", another: "风味特点", contents: "内容量", allergens: "过敏原",
     storage: "保存方法", storageText: "请避开潮湿与阳光直射，常温保存。", nutrition: "营养成分",
     map: "地图", page: "故事页面", pages: "故事页面导航", instagram: "分享到Instagram",
@@ -105,7 +105,7 @@ const ui = {
   },
   "zh-TW": {
     ingredients: "食材與工藝", usage: "基本用法", table: "搭配與風味", details: "商品詳情",
-    discover: "線上選購高湯", discoverBody: "比較每款高湯的食材與風味，選擇適合日常料理的一款。",
+    discover: "線上選購高湯", discoverBody: "選擇商品後，將開啟茅乃舍線上商店的商品頁面。",
     scroll: "向下捲動閱讀 ↓", another: "風味特點", contents: "內容量", allergens: "過敏原",
     storage: "保存方法", storageText: "請避開潮濕與陽光直射，常溫保存。", nutrition: "營養成分",
     map: "地圖", page: "故事頁面", pages: "故事頁面導覽", instagram: "分享到Instagram",
@@ -113,7 +113,7 @@ const ui = {
   },
   ko: {
     ingredients: "재료와 제조법", usage: "기본 사용법", table: "요리와 풍미", details: "상품 정보",
-    discover: "온라인에서 다시 고르기", discoverBody: "각 다시의 재료와 풍미를 비교하고 자주 만드는 요리에 맞는 제품을 골라 보세요.",
+    discover: "온라인에서 다시 고르기", discoverBody: "상품을 선택하면 가야노야 온라인 숍의 상품 페이지가 열립니다.",
     scroll: "아래로 스크롤해 읽기 ↓", another: "풍미", contents: "내용량", allergens: "알레르기",
     storage: "보관 방법", storageText: "습기와 직사광선을 피해 실온에 보관하세요.", nutrition: "영양 성분",
     map: "지도", page: "스토리 페이지", pages: "스토리 페이지 목록", instagram: "Instagram에 공유",
@@ -121,7 +121,7 @@ const ui = {
   },
   ne: {
     ingredients: "सामग्री र निर्माण", usage: "प्रयोग गर्ने तरिका", table: "परिकार र स्वाद", details: "उत्पादन विवरण",
-    discover: "दाशी अनलाइन किन्नुहोस्", discoverBody: "हरेक दाशीको सामग्री र स्वाद तुलना गरी आफ्नो दैनिक परिकारका लागि उपयुक्त उत्पादन छान्नुहोस्।",
+    discover: "दाशी अनलाइन किन्नुहोस्", discoverBody: "उत्पादन छान्दा Kayanoya अनलाइन पसलको सम्बन्धित पृष्ठ खुल्छ।",
     scroll: "तल स्क्रोल गरेर पढ्नुहोस् ↓", another: "स्वाद", contents: "परिमाण", allergens: "एलर्जी तत्व",
     storage: "भण्डारण", storageText: "चिस्यान र प्रत्यक्ष घामबाट टाढा सामान्य तापक्रममा राख्नुहोस्।", nutrition: "पोषण विवरण",
     map: "नक्सा", page: "कथा पृष्ठ", pages: "कथा पृष्ठहरू", instagram: "Instagram मा साझा गर्नुहोस्",
@@ -236,7 +236,7 @@ export function buildRichProductStory(product: Product, allProducts: Product[], 
 
   const heroImage = product.image ?? "/images/ingredients/dashi-ingredients.jpg";
   const editorialImage = productEditorialImages[product.slug] ?? "/images/ingredients/dashi-ingredients.jpg";
-  const featureSection = product.sections.find((section) => section.id === "features");
+  const materialsSection = product.sections.find((section) => section.id === "materials");
   const usageSection = product.sections.find((section) => section.id === "usage");
 
   return {
@@ -253,7 +253,7 @@ export function buildRichProductStory(product: Product, allProducts: Product[], 
         title: labels.ingredients,
         body: locale === "ne"
           ? `${copy.summary} ${copy.ingredients}`
-          : `${getLocalizedText(featureSection?.body ?? product.summary, locale)} ${copy.summary}`,
+          : `${copy.summary} ${getLocalizedText(materialsSection?.body ?? product.summary, locale)}`,
         chips: copy.tags
       },
       {
@@ -271,7 +271,7 @@ export function buildRichProductStory(product: Product, allProducts: Product[], 
       },
       {
         image: editorialImage, alt: labels.discover,
-        position: "center 48%", kicker: labels.discover, title: labels.discover, body: labels.discoverBody
+        position: "center 76%", kicker: labels.discover, title: labels.discover, body: labels.discoverBody
       }
     ],
     details: {

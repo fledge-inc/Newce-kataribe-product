@@ -141,6 +141,49 @@ export function RichProductStory({locale, story}: {locale: string; story: RichPr
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const rail = railRef.current;
+    if (!rail) return;
+
+    let locked = false;
+    let releaseTimer: ReturnType<typeof setTimeout> | undefined;
+
+    const onWheel = (event: WheelEvent) => {
+      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX) || Math.abs(event.deltaY) < 8) return;
+
+      const panel = (event.target as Element | null)?.closest<HTMLElement>(".story-panel");
+      const panelCanScroll = panel && (
+        event.deltaY > 0
+          ? panel.scrollTop + panel.clientHeight < panel.scrollHeight - 2
+          : panel.scrollTop > 2
+      );
+      if (panelCanScroll) return;
+
+      event.preventDefault();
+      if (locked) return;
+
+      const pages = pageRefs.current.filter((page): page is HTMLElement => Boolean(page));
+      if (pages.length === 0) return;
+      const activeIndex = pages.reduce((closest, page, index) => (
+        Math.abs(page.offsetTop - rail.scrollTop) < Math.abs(pages[closest].offsetTop - rail.scrollTop)
+          ? index
+          : closest
+      ), 0);
+      const targetIndex = Math.max(0, Math.min(pages.length - 1, activeIndex + (event.deltaY > 0 ? 1 : -1)));
+      if (targetIndex === activeIndex) return;
+
+      locked = true;
+      pages[targetIndex].scrollIntoView({behavior: "smooth", block: "start"});
+      releaseTimer = setTimeout(() => { locked = false; }, 720);
+    };
+
+    rail.addEventListener("wheel", onWheel, {passive: false});
+    return () => {
+      rail.removeEventListener("wheel", onWheel);
+      if (releaseTimer) clearTimeout(releaseTimer);
+    };
+  }, []);
+
   const shareToInstagram = async () => {
     const shareData = {
       title: story.productName,
