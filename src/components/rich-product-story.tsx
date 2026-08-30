@@ -197,8 +197,25 @@ export function RichProductStory({locale, story}: {locale: string; story: RichPr
                   className="story-visual-image"
                   style={{objectPosition: page.position}}
                 />
+                <span className="story-photo-frame" aria-hidden="true" />
+                <span className="story-photo-caption" aria-hidden="true">
+                  {pad2(pageNumber)} — {page.kicker}
+                </span>
+                {pageNumber >= 2 && pageNumber <= 4 && (
+                  <span className="story-product-cutout" aria-hidden="true">
+                    <Image
+                      src={pages[0].image}
+                      alt=""
+                      fill
+                      sizes="88px"
+                      className="object-cover"
+                    />
+                  </span>
+                )}
               </div>
               <div className="story-panel">
+                <span className="story-section-number" aria-hidden="true">{pad2(pageNumber)}</span>
+                <span className="story-side-label" aria-hidden="true">KATARIBE · DASHI STORY</span>
                 <StoryCopy page={pageNumber} story={story} />
                 {pageNumber === 6 && (
                   <>
