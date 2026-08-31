@@ -599,48 +599,20 @@ a:focus-visible {
   bottom: 23px;
   left: 28px;
   z-index: 6;
-  max-width: calc(100% - 130px);
+  max-width: calc(100% - 56px);
   color: #fff;
   font-size: 9px;
   font-weight: 600;
   letter-spacing: 0.18em;
   line-height: 1.4;
+  overflow-wrap: anywhere;
   text-shadow: 0 1px 5px rgb(20 20 15 / 0.7);
-}
-
-.story-product-cutout {
-  position: absolute;
-  right: 25px;
-  bottom: 20px;
-  z-index: 7;
-  width: 78px;
-  height: 98px;
-  overflow: hidden;
-  border: 5px solid #f8f4ea;
-  background: #eee9df;
-  box-shadow: 0 8px 22px rgb(31 25 17 / 0.24);
-  transform: rotate(3.5deg);
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.story-page-3 .story-product-cutout {
-  right: auto;
-  left: 26px;
-  transform: rotate(-4deg);
 }
 
 .story-page-3 .story-photo-caption {
   right: 28px;
   left: auto;
   text-align: right;
-}
-
-.product-story-section.is-current .story-product-cutout {
-  transform: rotate(1.5deg) translateY(-3px);
-}
-
-.story-page-3.is-current .story-product-cutout {
-  transform: rotate(-2deg) translateY(-3px);
 }
 
 .story-visual::after {
@@ -717,14 +689,19 @@ a:focus-visible {
 
 .story-page-1 .story-panel {
   order: -1;
-  flex: 0 0 44%;
+  flex: 0 0 54%;
   /* Reserve the top-right lane for the transparent page counter. */
   padding-top: 84px;
 }
 
 .story-page-1 .story-visual {
-  flex-basis: 56%;
+  flex-basis: 46%;
   background: #e7e3dc;
+}
+
+.story-page-1 .story-visual-image,
+.story-page-5 .story-visual-image {
+  object-fit: contain;
 }
 
 .story-page-1 .story-photo-frame {

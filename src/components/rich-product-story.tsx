@@ -244,17 +244,6 @@ export function RichProductStory({locale, story}: {locale: string; story: RichPr
                 <span className="story-photo-caption" aria-hidden="true">
                   {pad2(pageNumber)} — {page.kicker}
                 </span>
-                {pageNumber >= 2 && pageNumber <= 4 && (
-                  <span className="story-product-cutout" aria-hidden="true">
-                    <Image
-                      src={pages[0].image}
-                      alt=""
-                      fill
-                      sizes="88px"
-                      className="object-cover"
-                    />
-                  </span>
-                )}
               </div>
               <div className="story-panel">
                 <span className="story-section-number" aria-hidden="true">{pad2(pageNumber)}</span>
