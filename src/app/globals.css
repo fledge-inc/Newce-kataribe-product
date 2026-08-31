@@ -563,33 +563,33 @@ a:focus-visible {
 
 .story-photo-frame {
   position: absolute;
-  inset: 16px;
+  inset: 14px;
   z-index: 4;
-  border: 1px solid rgb(255 255 255 / 0.72);
-  border-radius: 2px;
-  box-shadow: inset 0 0 0 1px rgb(35 31 23 / 0.08);
+  border: 0;
+  box-shadow: none;
   pointer-events: none;
 }
 
 .story-photo-frame::before,
 .story-photo-frame::after {
   position: absolute;
-  width: 34px;
-  height: 34px;
+  width: 24px;
+  height: 24px;
   border-color: rgb(255 255 255 / 0.82);
   content: "";
+  opacity: 0.82;
 }
 
 .story-photo-frame::before {
-  top: -7px;
-  left: -7px;
+  top: 0;
+  left: 0;
   border-top: 2px solid;
   border-left: 2px solid;
 }
 
 .story-photo-frame::after {
-  right: -7px;
-  bottom: -7px;
+  right: 0;
+  bottom: 0;
   border-right: 2px solid;
   border-bottom: 2px solid;
 }
