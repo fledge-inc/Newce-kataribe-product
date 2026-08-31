@@ -610,9 +610,11 @@ a:focus-visible {
 }
 
 .story-page-3 .story-photo-caption {
-  right: 28px;
-  left: auto;
-  text-align: right;
+  right: auto;
+  bottom: 32px;
+  left: 72px;
+  max-width: calc(100% - 144px);
+  text-align: left;
 }
 
 .story-visual::after {
